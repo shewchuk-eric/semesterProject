@@ -36,7 +36,7 @@ public class RectangleOfFortune {
         newPlayer.getName();
         newGame.getName();
         newGame.displayHelp();  
-    }   
+    }
         public void getName() {
              Scanner input = new Scanner(System.in);
              System.out.println("Please enter your name");
