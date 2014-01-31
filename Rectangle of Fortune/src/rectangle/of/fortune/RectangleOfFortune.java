@@ -33,6 +33,8 @@ public class RectangleOfFortune {
     public static void main(String[] args) {
         RectangleOfFortune newGame = new RectangleOfFortune();
         Player newPlayer = new Player();
+        GuessLetter newGuess = new GuessLetter();
+        newGuess.checkLetter(); 
         newPlayer.getName();
         newGame.getName();
         newGame.displayHelp();  
