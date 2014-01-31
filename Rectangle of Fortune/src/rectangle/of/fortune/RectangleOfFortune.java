@@ -51,4 +51,8 @@ public class RectangleOfFortune {
             System.out.println(this.instructions);
         }
 
+    private void getRandom() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

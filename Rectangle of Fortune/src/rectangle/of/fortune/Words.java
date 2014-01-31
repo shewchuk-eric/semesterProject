@@ -18,7 +18,7 @@ public class Words {
     public String[] easyWords = {"SAMPLE","LOVE","BETTER","INTERNET","SPIDER","WATER","NEST","EAST","SLANTED","SCANNER"};
     public String[] medWords = {"EDIBLE","PEANUT","BRANDING","SPELLING","QUIETLY","AMAZING","AFTER","YUMMY"};
 
-    public void getRandom(String[] array) {
+    public void getRandom() {
     int rnd = new Random().nextInt(hardWords.length);
         this.Word = hardWords[rnd];
         
