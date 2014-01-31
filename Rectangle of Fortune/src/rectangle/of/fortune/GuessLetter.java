@@ -22,7 +22,7 @@ public class GuessLetter {
         oldLet2='t';
         goodPick=100;
         word="class";
-        correct=1;
+        correct=3;
     }
 
     public void checkLetter(){
@@ -38,8 +38,12 @@ public class GuessLetter {
                          "\nYour score is now "+playerScore+" points.");
                  if(correct==word.length()){
                      System.out.println("You Win!!!");
+                     GameOver gameOver=new GameOver();
+                     gameOver.gameEnd();
                  }
              }
         }
     }  
-}}
+}
+
+}

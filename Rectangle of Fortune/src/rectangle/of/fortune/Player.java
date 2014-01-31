@@ -13,14 +13,14 @@ import java.util.Scanner;
  * @author Eric Shewchuk and Kevin Phair
  */
 public class Player {
-    String playName, name;
-    int playNum, players, score;
+    String name;
+    int players=2, score;
     
     Player() { // This will be changed later to allow for selection of number of players
-        players=3;
+        score=0;
     }
         public void getName() {
-             System.out.println("Enter player names\n\n");
+             System.out.println("Enter player name\n\n");
              Scanner input = new Scanner(System.in);
              this.name = input.next();             
              System.out.println("Hi "+this.name+", there are "+players+" players.");

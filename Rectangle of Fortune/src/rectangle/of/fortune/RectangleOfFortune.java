@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @authors Eric Shewchuk and Kevin Phair
  */
 public class RectangleOfFortune {
-       int players, rounds, letters, found, level;  /** players is how many players in game - game proposal suggests 2 or 3
+       int rounds=3, letters, found, level;  /** players is how many players in game - game proposal suggests 2 or 3
          * rounds is how many rounds to play - limit to a certain number like 5?
          * letters is how many letters in the word being played
          * found is how many letters have been correctly chosen in the word being played
@@ -32,10 +32,12 @@ public class RectangleOfFortune {
        
     public static void main(String[] args) {
         RectangleOfFortune newGame = new RectangleOfFortune();
-        Player newPlayer = new Player();
+        Player playerOne = new Player();
+        Player playerTwo = new Player();
         GuessLetter newGuess = new GuessLetter();
         newGuess.checkLetter(); 
-        newPlayer.getName();
+        playerOne.getName();
+        playerTwo.getName();
         newGame.getName();
         newGame.displayHelp();  
     }

@@ -11,11 +11,9 @@ package rectangle.of.fortune;
  * @author kevinphair
  */
 public class Menu {
-        public static void main(String[] args) {
+       
         RectangleOfFortune newGame = new RectangleOfFortune();
         Player newPlayer = new Player();
-        newPlayer.getName();
-        newGame.getName();
-        newGame.displayHelp();
+
     }
-}
+
