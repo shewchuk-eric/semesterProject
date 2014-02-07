@@ -32,15 +32,27 @@ public class RectangleOfFortune {
        
     public static void main(String[] args) {
         RectangleOfFortune newGame = new RectangleOfFortune();
-        Player playerOne = new Player();
+        MainMenuView mainMenu=new MainMenuView(); //test for HelpMenuView - Move to Main Menu when ready
+        mainMenu.getChoice();
+        
+        /*test for Player class - move to another class later
+        Player playerOne = new Player(); 
         Player playerTwo = new Player();
-        GuessLetter newGuess = new GuessLetter();
-        newGuess.checkLetter(); 
         playerOne.getName();
         playerTwo.getName();
+        */
+        
+        /*test for GuessLetter - move to PlayGame later
+        GuessLetter newGuess = new GuessLetter(); 
+        newGuess.checkLetter();
+        */     
+        
+        /*lesson 2 assignment - change or remove later
         newGame.getName();
         newGame.displayHelp();  
+        */
     }
+    
         public void getName() {
              Scanner input = new Scanner(System.in);
              System.out.println("Please enter your name");
