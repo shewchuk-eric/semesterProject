@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package rectangle.of.fortune;
 
@@ -10,11 +6,11 @@ import java.util.Random;
 
 /**
  *
- * @author kevinphair
+ * @author Eric Shewchuk
  */
 public class Words {
     String Word;
-    public String[] hardWords = {"ALPHABET","JEALOUS","ENORMITY","HAIKU","JAZZED","JUICEBOX","STUPENDOUS","STIPEND","HAJJ"};
+    public String[] hardWords = {"ALPHABET","JEALOUS","ENORMITY","HAIKU","JAZZED","JUICEBOX","STUPENDOUS","STIPEND","MOSQUITO", "CATERPILLAR"};
     public String[] easyWords = {"SAMPLE","LOVE","BETTER","INTERNET","SPIDER","WATER","NEST","EAST","SLANTED","SCANNER"};
     public String[] medWords = {"EDIBLE","PEANUT","BRANDING","SPELLING","QUIETLY","AMAZING","AFTER","YUMMY"};
 

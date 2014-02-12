@@ -20,12 +20,12 @@ public class MainMenuView {
         Scanner inFile = new Scanner(System.in);
         
         do {            
-            System.out.println("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            border();
             System.out.println("\tMAIN MENU\n\n\tEnter the number associated with one of the following commands:");
             System.out.println("\n\t1 - Start New Game");
             System.out.println("\t2 - Help and Instructions");
             System.out.println("\t3 - Quit and Exit Game");
-            System.out.println("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+            border();
             
             // get user choice and direct to proper display item
             choice = inFile.nextLine();
@@ -40,11 +40,17 @@ public class MainMenuView {
                     break;
                 case "3":
                     break;                  
-                default: 
+                default:
+                    border();
                     System.out.println("Invalid selection. Please enter a valid selection.");
+                    border();
                     continue;
             }
         } while (!choice.equals("3"));
          return;
+    }
+        public void border() {       
+        System.out.println(
+        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
 }
