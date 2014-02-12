@@ -12,8 +12,8 @@ public class StartGame {
 
     Scanner inFile = new Scanner(System.in);  
         
-        String play, choice, who, nameOne, nameTwo, nameThree;
-        int rounds, difficulty, players;
+        String choice, nameOne, nameTwo, nameThree="";
+        int rounds, difficulty, players, nameLength;
 
         
     

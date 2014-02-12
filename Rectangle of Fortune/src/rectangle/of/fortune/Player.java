@@ -10,16 +10,31 @@ import java.util.Scanner;
 public class Player {
     
     String name;
-    int score;
+    int score, validName;
     
-    Player() { // This will be changed later to allow for selection of number of players
+    Player() { 
         score=0;
     }
  
         String getName() {
              Scanner input = new Scanner(System.in);
              this.name = input.next();
+             validName=name.length();
+             while(validName==0) {
+             continue;
+          }  
+             if(validName > 15){
+                 border();
+                 System.out.println("\tPlayer names must be no longer than 15 characters.");
+                 border();
+                 getName();
+             }
              return name;
     }
+        
+   public void border() {       
+        System.out.println(
+        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    }    
 }
 
