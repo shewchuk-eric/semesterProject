@@ -10,9 +10,11 @@ public class MainMenuControl {
         
         public void newGame() {
         StartGame newGame = new StartGame();
+        GuessLetter newWord = new GuessLetter();
         newGame.playerCount();
         newGame.playRounds();
         newGame.difficulty();
+        newWord.GuessWord();
         newGame.outputTest();
         }
            
