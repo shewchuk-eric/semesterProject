@@ -8,7 +8,7 @@ package rectangle.of.fortune;
 
 /**
  *
- * @author Eric Shewchuk and Kevin Phair
+ * @author Eric Shewchuk
  */
 public class GuessLetter {
     char newLet1, newLet2, oldLet1, oldLet2;
@@ -27,17 +27,17 @@ public class GuessLetter {
 
     public void checkLetter(){
         if(newLet1==oldLet1){
-            System.out.println("That letter has already been used.\nPlease select another letter.");
+            System.out.println("\tThat letter has already been used.\n\tPlease select another letter.");
         }
         else {
             for(i=0; i<word.length(); i++){
              if(newLet1==word.charAt(i)){
                  playerScore+=goodPick;
                  correct++;
-                 System.out.println("You found the letter in position "+(i+1)+
-                         "\nYour score is now "+playerScore+" points.");
+                 System.out.println("\tYou found the letter in position "+(i+1)+
+                         "\n\tYour score is now "+playerScore+" points.");
                  if(correct==word.length()){
-                     System.out.println("You Win!!!");
+                     System.out.println("\tYou Win!!!");
                      GameOver gameOver=new GameOver();
                      gameOver.gameEnd();
                  }

@@ -3,7 +3,7 @@ package rectangle.of.fortune;
 import java.util.Scanner;
 
 /**
- * @authors Eric Shewchuk and Kevin Phair
+ * @author Eric Shewchuk
  */
 public class RectangleOfFortune {
        int rounds=3, letters, found, level;  /** players is how many players in game - game proposal suggests 2 or 3
@@ -32,15 +32,20 @@ public class RectangleOfFortune {
        
     public static void main(String[] args) {
         RectangleOfFortune newGame = new RectangleOfFortune();
-        Player playerOne = new Player();
-        Player playerTwo = new Player();
-        GuessLetter newGuess = new GuessLetter();
-        newGuess.checkLetter(); 
-        playerOne.getName();
-        playerTwo.getName();
+        MainMenuView mainMenu=new MainMenuView(); //test for HelpMenuView - Move to Main Menu when ready
+        mainMenu.getChoice();
+        
+        /*test for GuessLetter - move to PlayGame later
+        GuessLetter newGuess = new GuessLetter(); 
+        newGuess.checkLetter();
+        */     
+        
+        /*lesson 2 assignment - change or remove later
         newGame.getName();
         newGame.displayHelp();  
+        */
     }
+    
         public void getName() {
              Scanner input = new Scanner(System.in);
              System.out.println("Please enter your name");
