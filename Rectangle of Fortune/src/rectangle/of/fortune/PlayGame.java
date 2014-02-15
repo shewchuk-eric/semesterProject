@@ -2,21 +2,28 @@
 package rectangle.of.fortune;
 
 /**
- *
  * @author Eric Shewchuk
  */
+
 public class PlayGame {
     int rounds, played;
     char guess;
-    PlayGame() {
-        rounds=5;
-        played=2;
-    }
- public void whatWord() {
-     System.out.println("This game will play a total of "+rounds+" rounds./n"
-     +played+" rounds have already been played.  There are "+(rounds-played)+" rounds left.");
- }
- public void guessLetter() {
-     
- }   
+    String word;
+
+ public void playGame() {
+        Words newWord = new Words();
+        word=newWord.selectWord();
+        GuessLetter player = new GuessLetter();
+        player.guessWord(word);
+ } 
+        public void outputTest() {
+        border();
+        System.out.println(word);
+        border();
+        }
+
+        public void border() {       
+        System.out.println(
+        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    }  
 }

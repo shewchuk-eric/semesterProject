@@ -13,7 +13,7 @@ public class StartGame {
     Scanner inFile = new Scanner(System.in);  
         
         String choice, nameOne, nameTwo, nameThree="";
-        int rounds, difficulty, players, nameLength;
+        int rounds, level, players, nameLength;
 
         
     
@@ -64,7 +64,7 @@ public class StartGame {
                      System.out.println("\tInvalid selection. Please enter either 2 or 3.");
                      border();
                      playerCount();
-            }                
+            }
        }
     
     public void playRounds() {//choose the number of rounds to play
@@ -112,7 +112,7 @@ public class StartGame {
         }
     }
     
-    public void difficulty() {//choose the difficulty level
+    int difficulty() {//choose the difficulty level
         border();
         System.out.println("\tHow difficult would you like the words to be?\n\tPlease choose from the following:\n"+
                 "\t1 - Easy\n"+
@@ -123,20 +123,21 @@ public class StartGame {
         choice = choice.trim().toUpperCase();
         switch(choice){
              case "1":
-                    difficulty=1;
-                    break;
+                    level=1;
+             return level;
              case "2":
-                    difficulty=2;
-                    break;
+                    level=2;
+             return level;
              case "3":
-                    difficulty=3;
-                    break;
+                    level=3;
+             return level;
              default:
                  border();
                  System.out.println("\tInvalid selection. Please choose 1 for easy, 2 for medium, or 3 for hard.");
                  border();
                  difficulty();
-        }        
+        }
+        return level;
     }
     
     public void outputTest() {

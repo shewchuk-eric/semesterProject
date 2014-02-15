@@ -3,23 +3,61 @@
 package rectangle.of.fortune;
 
 import java.util.Random;
+import java.util.Vector;
 
 /**
  *
  * @author Eric Shewchuk
  */
 public class Words {
-    String Word;
-    public String[] hardWords = {"ALPHABET","JEALOUS","ENORMITY","HAIKU","JAZZED","JUICEBOX","STUPENDOUS","STIPEND","MOSQUITO", "CATERPILLAR"};
-    public String[] easyWords = {"SAMPLE","LOVE","BETTER","INTERNET","SPIDER","WATER","NEST","EAST","SLANTED","SCANNER"};
-    public String[] medWords = {"EDIBLE","PEANUT","BRANDING","SPELLING","QUIETLY","AMAZING","AFTER","YUMMY"};
+    String word;
+    int level, i=0, rnd;
+    public Vector<String> vault = new Vector<String>();
+    public String[] easyWords = {"SAME","LOVE","BEST","BOOK","WATER","HAIKU","EAST","FROG","TWIST","WRAP","PARK","SMALL","WATER","SLIP","MASK","TRUCK","WRITE","FACE","FENCE","BLOCK"};
+    public String[] medWords = {"EDIBLE","PEANUT","SPIDER","SLANTED","SCANNER","QUIETLY","AMAZING","PICKLED","OMELET","AVOCADO","JAZZED","STUPOR","FALLEN","TRIFLE","PEPPER","SNOWING","BICYCLE","WEASEL","FAILURE","FLATBED"};
+    public String[] hardWords = {"ALPHABET","JEALOUS","ENORMITY","BRANDING","IGNORANT","JUICEBOX","STUPENDOUS","COMPENSATE","MOSQUITOS","CATERPILLAR","INTERNET","SPELLING","SUITCASES","MUSHROOMS","TRANSPORTER","BACKPACK","SLOTHFUL","BEDRIDDEN","ACCELERATE","GARGANTUAN"};
 
-    public void getRandom(String[] array) {
-    int rnd = new Random().nextInt(hardWords.length);
-        this.Word = hardWords[rnd];
-        
-    }
-    public void selectWord() {
-            System.out.println(this.Word);
+    String selectWord() {
+        StartGame difficulty = new StartGame();
+        level=difficulty.difficulty();
+        switch(level){
+            case 1:
+                do{
+                 rnd = new Random().nextInt(easyWords.length);
+                 this.word = easyWords[rnd];
+              for(String test:vault)
+                  if(test.equals(word)){
+                      i=1;
+                      }
+                }
+                  while(i==1);
+                      vault.add(word);
+                      return word;
+            case 2:
+                do{
+                 rnd = new Random().nextInt(medWords.length);
+                 this.word = medWords[rnd];
+                 for(String test:vault)
+                  if(word.equals(test)){
+                      i=1;
+                  }
+                }
+                  while(i==1);
+                      vault.add(word); 
+                      return word;
+            case 3:
+                do{
+                 rnd = new Random().nextInt(hardWords.length);
+                 this.word = hardWords[rnd];
+                 for(String test:vault)
+                  if(word.equals(test)){
+                      i=1;
+                    }
+                  }
+                  while(i==1);
+                      vault.add(word);
+                      return word;
+                  }
+          return word;
     }
 }
