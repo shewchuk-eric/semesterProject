@@ -9,6 +9,7 @@ public class GuessLetter {
     char newLet1, newLet2, oldLet1, oldLet2;
     int playerScore=200, goodPick, i, correct;
     String word;
+    String validLetters="BACDEFGHIJKLMNOPQRSTUVWXYZ";
     
 public void guessWord(String s) {
         String secretWord = s;//In the future, this will be replaced with an array of words. We will also need to differentiate between upper and lowercase.
@@ -36,8 +37,13 @@ public void guessWord(String s) {
         System.out.print("\nGuesses so far: " + guesses);
         System.out.print("\nEnter Your letter:");
         String letter = keyboard.next();
+        letter = letter.toUpperCase();
         if(letter.length() != 1 && secretWord.indexOf(letter) == -1){
             System.out.println("You can only guess one letter at a time. Please try again.");
+            continue;
+        }
+        if(validLetters.indexOf(letter) == -1){
+            System.out.println("\"" + letter + "\" is not a letter. Please enter a valid letter.");
             continue;
         }
         if(guesses.indexOf(letter)<0){
