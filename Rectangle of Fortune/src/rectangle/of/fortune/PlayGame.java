@@ -48,7 +48,7 @@ public class PlayGame {
         word=newWord.selectWord();
         System.out.println("Begin round "+(played+1));
         GuessLetter secret = new GuessLetter();//play a round
-        secret.secretWord(word); 
+        secret.secretWord(word, players); 
         }
      
      /*Build a function here to gather and track
