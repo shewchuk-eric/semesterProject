@@ -7,20 +7,20 @@ import java.util.Scanner;
  */
 public class GuessLetter {
     char newLet1, newLet2, oldLet1, oldLet2;
-    int playerScore=200, goodPick, i, correct;
-    String word;
+    int playerScore=200, goodPick, i, correct, flag=0;
+    String word, guesses="", secretWord;
     String validLetters="BACDEFGHIJKLMNOPQRSTUVWXYZ";
     
-public void guessWord(String s) {
-        String secretWord = s;//In the future, this will be replaced with an array of words. We will also need to differentiate between upper and lowercase.
-        String guesses = ""; //the user's guesses.
+    public void secretWord(String s) {
+        secretWord = s;//comes from Words.selectWord() - passed in by PlayGame class
+
     Scanner keyboard = new Scanner (System.in);
     boolean notDone;
     while (true){
         //print out the board
         notDone = false;
         System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nHere's your word:");
-        for (char secretLetter : secretWord.toCharArray()){//iterates over the letters
+            for (char secretLetter : secretWord.toCharArray()){//iterates over the letters
             if(guesses.indexOf(secretLetter) == -1){
             System.out.print("_ ");
             notDone = true;
@@ -61,10 +61,9 @@ public void guessWord(String s) {
            System.out.println("Great Guess!"); 
         
     }
-    } 
-    System.out.println("\nCongratulations! You win!");
-
-}
+    }
+System.out.println("");
+ }        
 }
 /*
     

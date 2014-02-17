@@ -7,7 +7,7 @@ import java.util.Vector;
 
 /**
  *
- * @author Eric Shewchuk
+ * @author Eric Shewchuk & Kevin Phair
  */
 public class Words {
     String word;
@@ -17,7 +17,7 @@ public class Words {
     public String[] medWords = {"EDIBLE","PEANUT","SPIDER","SLANTED","SCANNER","QUIETLY","AMAZING","PICKLED","OMELET","AVOCADO","JAZZED","STUPOR","FALLEN","TRIFLE","PEPPER","SNOWING","BICYCLE","WEASEL","FAILURE","FLATBED"};
     public String[] hardWords = {"ALPHABET","JEALOUS","ENORMITY","BRANDING","IGNORANT","JUICEBOX","STUPENDOUS","COMPENSATE","MOSQUITOS","CATERPILLAR","INTERNET","SPELLING","SUITCASES","MUSHROOMS","TRANSPORTER","BACKPACK","SLOTHFUL","BEDRIDDEN","ACCELERATE","GARGANTUAN"};
 
-    String selectWord() {
+    String selectWord() {// gets called from the PlayGame class
         StartGame difficulty = new StartGame();
         level=difficulty.difficulty();
         switch(level){

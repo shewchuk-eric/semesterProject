@@ -14,9 +14,10 @@ public class Player {
     
     Player() { 
         score=0;
+        name="";
     }
  
-        String getName() {
+        String getName() {//called from StartGame class
              Scanner input = new Scanner(System.in);
              this.name = input.next();
              validName=name.length();

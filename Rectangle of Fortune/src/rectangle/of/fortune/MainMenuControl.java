@@ -11,11 +11,8 @@ public class MainMenuControl {
     String nameOne, nameTwo, nameThree, word;
         
         public void newGame() {
-        StartGame newGame = new StartGame();
-        newGame.playerCount();
-        newGame.playRounds();
-        PlayGame playGame = new PlayGame();
-        playGame.playGame();
+        PlayGame newGame = new PlayGame();
+        newGame.playGame();
     }
            
         public void getHelpMenu() {

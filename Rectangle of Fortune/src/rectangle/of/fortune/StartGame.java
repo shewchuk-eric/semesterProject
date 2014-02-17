@@ -15,59 +15,26 @@ public class StartGame {
         String choice, nameOne, nameTwo, nameThree="";
         int rounds, level, players, nameLength;
 
-        
-    
-    public void playerCount() {// choose the number of players 
+    int playerCount() {// called from PlayGame class - choose the number of players 
         border();
-        System.out.println("\tWill there be two or three players?");// get user choice and validate
+        System.out.println("\tWill there be two or three players?");
         border();
-            choice = inFile.nextLine();
-            choice = choice.trim().toUpperCase();
-            if(choice.equals("2")){
-                players=2;
-                     Player playerOne = new Player();//initialize player one
-                     border();
-                     System.out.println("\tPlayer one, please enter your name");
-                     border();
-                     nameOne = playerOne.getName();
-                     
-                     Player playerTwo = new Player();//initialize player two
-                     border();
-                     System.out.println("\tPlayer two, please enter your name");
-                     border();
-                     nameTwo = playerTwo.getName();
+            choice = inFile.nextLine();//get user choice
+            choice = choice.trim().toUpperCase();//convert to UPPERCASE
+            if(!choice.equals("2") && !choice.equals("3")){//validate entry from user
+                System.out.println("\tInvalid selection. Please enter either 2 or 3.");
+                playerCount();
             }
-                     
-            else if(choice.equals("3")){
-                players=3;
-                     Player playerOne = new Player();//initialize player one
-                     border();
-                     System.out.println("\tPlayer one, please enter your name");
-                     border();
-                     nameOne = playerOne.getName();
-                     
-                     Player playerTwo = new Player();//initialize player two
-                     border();
-                     System.out.println("\tPlayer two, please enter your name");
-                     border();
-                     nameTwo = playerTwo.getName();
-                                          
-                     Player playerThree = new Player();//initialize player three
-                     border();
-                     System.out.println("\tPlayer three, please enter your name");
-                     border();
-                     nameThree = playerThree.getName();
+            if(choice.equals("2")){//set to 2 players if chosen
+                players = 2;
             }
-            
-            else {
-                     border();
-                     System.out.println("\tInvalid selection. Please enter either 2 or 3.");
-                     border();
-                     playerCount();
+            else{//set to 3 players if chosen
+                players = 3;
             }
-       }
+            return players;//send value back to PlayGame class
+    }
     
-    public void playRounds() {//choose the number of rounds to play
+    int playRounds() {//choose the number of rounds to play
         border();
         System.out.println("\tHow many rounds would you like to play?\n\tYou may play up to ten rounds.");
         border();
@@ -110,6 +77,7 @@ public class StartGame {
                  border();
                  playRounds();
         }
+        return rounds;
     }
     
     int difficulty() {//choose the difficulty level
@@ -139,18 +107,6 @@ public class StartGame {
         }
         return level;
     }
-    
-    public void outputTest() {
-        border();
-        System.out.println("\tThere are "+players+" players.\n");
-        System.out.print("\tTheir names are:\n"+
-                "\t"+nameOne+"\n"+
-                "\t"+nameTwo+"\n");
-        if(!nameThree.equals("")){
-            System.out.println("\t"+nameThree);
-        }
-        border();
-        }
 
     public void border() {       
         System.out.println(
