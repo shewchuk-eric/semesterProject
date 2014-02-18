@@ -64,7 +64,8 @@ public class GuessLetter {
             System.out.println("Bad Guess");
         }
         else{
-           System.out.println("Great Guess!"); 
+           System.out.println("Great Guess!");
+           playerNumber--;
         
     }
         if(playerNumber==eachPass){

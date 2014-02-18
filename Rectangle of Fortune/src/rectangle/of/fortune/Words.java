@@ -4,6 +4,7 @@ package rectangle.of.fortune;
 
 import java.util.Random;
 import java.util.Vector;
+import java.util.Arrays;
 
 /**
  *
@@ -60,4 +61,8 @@ public class Words {
                   }
           return word;
     }
+
+  
+        
+    
 }

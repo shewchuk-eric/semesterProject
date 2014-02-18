@@ -20,7 +20,8 @@ public class MainMenuControl {
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.getChoice();
     }
-
+        
+        
     public void border() {       
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
