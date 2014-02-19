@@ -7,6 +7,9 @@ package rectangle.of.fortune;
  */
 import java.util.Scanner;
 public class HelpMenuView {
+    
+    Scanner inFile = new Scanner(System.in);
+    String choice;
 
     // Menu items to be displayed    
     public final static String[][] menuItems = {
@@ -14,17 +17,15 @@ public class HelpMenuView {
         {"2", "Scoring"}, 
         {"3", "Options"},
         {"4", "Playing the Game"},
-        {"5", "Back to Main Menu"}
+        {"5", "See list of words"},
+        {"6", "Back to Main Menu"}
     };
     
     // Create instance of the HelpMenuControl (action) class
     HelpMenuControl helpMenuControl = new HelpMenuControl();
-    
+  
     // display the help menu and get the user input selection
-    public void getChoice() {       
-              
-        String choice;
-        Scanner inFile = new Scanner(System.in);
+    public void getChoice() {
         
         do {            
             this.display(); // display the menu
@@ -46,13 +47,16 @@ public class HelpMenuView {
                 case "4":
                     this.helpMenuControl.gamePlay();
                     break;
-                case "5": 
+                case "5":
+                    this.helpMenuControl.wordList();
+                    break;
+                case "6":
                     break;
                 default: 
                     System.out.println("Invalid selection. Please enter a valid selection.");
                     continue;
             }
-        } while (!choice.equals("5"));
+        } while (!choice.equals("6"));
          return;
     }
 

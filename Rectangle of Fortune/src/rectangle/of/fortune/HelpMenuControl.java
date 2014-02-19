@@ -2,11 +2,18 @@
 
 package rectangle.of.fortune;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Eric Shewchuk
  */
 public class HelpMenuControl {
+    
+        Words wordList = new Words();
+        MainMenuView goMain = new MainMenuView();
+        String choice;
+        Scanner inFile = new Scanner(System.in);    
 
     public void gameObject() {
         System.out.println();
@@ -63,6 +70,35 @@ public class HelpMenuControl {
                 + "\n\tnumber of rounds has been completed."
                 ); 
         border();
+    }
+    
+    public void wordList() {
+        System.out.println();
+        border();
+        System.out.println(
+                "\tYou can choose to print a list of the words that can be played."
+                + "\n\tYou will be given the option to list the level of difficulty"
+                + "\n\tthat you want to see.  Select one of the following options:\n\n"
+                        + "\t1 - Choose a word list to display\n"
+                        + "\t2 - Go back to Help Menu\n"
+                        + "\t3 - Go back to Main Menu");
+        border();
+            choice = inFile.nextLine();
+            choice = choice.trim().toUpperCase();
+            
+            switch (choice) {
+                case "1":
+                    this.wordList.printWords();
+                    break;
+                case "2":
+                    break;
+                case "3":
+                    this.goMain.getChoice();
+                    break;
+                default: 
+                    System.out.println("Invalid selection. Please enter a valid selection.");
+            }
+        while (!choice.equals("2"));
     }
     
     public void border() {       
