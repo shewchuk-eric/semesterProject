@@ -2,6 +2,7 @@
 
 package rectangle.of.fortune;
 
+
 import java.util.Scanner;
 
 /**
@@ -14,7 +15,7 @@ public class StartGame {
         
         String choice, nameOne, nameTwo, nameThree="";
         int rounds, level, players, nameLength;
-
+        
     int playerCount() {// called from PlayGame class - choose the number of players 
         border();
         System.out.println("\tWill there be two or three players?");
