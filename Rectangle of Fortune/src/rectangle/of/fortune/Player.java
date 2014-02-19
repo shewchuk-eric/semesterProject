@@ -38,28 +38,3 @@ public class Player {
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }    
 }
-public class AcceptingNames {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner (System.in);
-        int numberOfPlayers;
-        int numStart=0;
-        System.out.print("How many players?");
-        numberOfPlayers = keyboard.nextInt();
-        String[][] players = new String[numberOfPlayers][3];
-        for (int row = 0; row < numberOfPlayers; row++){  
-            players[row][0] = "Player" + ++numStart;
-        int col = 1;
-        int playnum = row + 1;
-        System.out.println("Player " + playnum + ", enter your name:");
-        players[row][col] = keyboard.next();
-     
-    }
-        
-        System.out.println();
-}
-    }
-
