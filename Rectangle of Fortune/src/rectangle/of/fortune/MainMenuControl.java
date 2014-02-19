@@ -1,7 +1,7 @@
 
 
 package rectangle.of.fortune;
-import java.util.Scanner;
+
 /**
  *
  * @author Eric Shewchuk

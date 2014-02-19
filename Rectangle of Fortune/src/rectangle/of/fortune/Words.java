@@ -11,7 +11,7 @@ import java.util.Vector;
  * @author Eric Shewchuk & Kevin Phair
  */
 public class Words {
-    
+
     Scanner inFile = new Scanner(System.in);
     String word, choice;
     int level, i=0, rnd, list=0;
@@ -68,7 +68,7 @@ public class Words {
         System.out.println("\tPlease choose the difficulty level of the words you want to list.\n"
                 + "\t1 - Easy\n"
                 + "\t2 - Medium\n"
-                + "\t3 - Hard\n\n"
+                + "\t3 - Hard\n"
                 + "\t4 - Go back to Help Menu");
             choice = inFile.nextLine();
             choice = choice.trim().toUpperCase();
@@ -84,6 +84,8 @@ public class Words {
                     list=3;
                     break;
                 case "4":
+                    HelpMenuView goHelp = new HelpMenuView();
+                    goHelp.getChoice();
                     break;
                 default:
                     System.out.println("That is not a valid selection.  Try again.");
