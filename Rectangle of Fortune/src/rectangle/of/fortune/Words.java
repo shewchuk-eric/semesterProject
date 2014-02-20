@@ -76,13 +76,31 @@ public class Words {
             
             switch(choice){
                 case "1":
-                    list=1;
+                    System.out.println("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    Arrays.sort(easyWords);
+        for (String easyWord : easyWords) {
+            System.out.println("\t" + easyWord);
+        }
+                    System.out.println("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    this.printWords();
                     break;
                 case "2":
-                    list=2;
+                    System.out.println("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    Arrays.sort(medWords);
+        for (String medWord : medWords) {
+            System.out.println("\t" + medWord);
+        }
+                    System.out.println("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    this.printWords();        
                     break;
                 case "3":
-                    list=3;
+                    System.out.println("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    Arrays.sort(hardWords);
+        for (String hardWord : hardWords) {
+            System.out.println("\t" + hardWord);
+        }
+                    System.out.println("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    this.printWords();        
                     break;
                 case "4":
                     HelpMenuView goHelp = new HelpMenuView();
@@ -91,8 +109,8 @@ public class Words {
                 default:
                     System.out.println("That is not a valid selection.  Try again.");
             }while(!choice.equals("4"));
-            
             /*put for loops and display code here
             use if tests to check the 'list' variable to determine which array to print*/
+            
     }
 }
