@@ -17,7 +17,7 @@ public class Words {
     String word, choice;
     int level, i=0, rnd, list=0;
     public Vector<String> vault = new Vector<String>();
-    public String[] easyWords = {"SHOUT","LOVE","BEST","BOOK","WATER","LABEL","EAST","FROG","TWIST","WRAP","PARK","SMALL","WATER","SLIP","SCOOTER","TRUCK","WRITE","FACE","FENCE","BLOCK"};
+    public String[] easyWords = {"SHOUT","LOVE","BEST","BOOK","WATER","LABEL","EAST","FROG","TWIST","WRAP","PARK","SMALL","TRAP","SLIP","SCOOTER","TRUCK","WRITE","FACE","FENCE","BLOCK"};
     public String[] medWords = {"EDIBLE","PEANUT","SPIDER","SLANTED","SCANNER","QUIETLY","AMAZING","PICKLED","OMELET","AVOCADO","JAZZED","STUPOR","FALLEN","TRIFLE","PEPPER","SNOWING","BICYCLE","WEASEL","FAILURE","FLATBED"};
     public String[] hardWords = {"ALPHABET","JEALOUS","ENORMITY","BRANDING","IGNORANT","JUICEBOX","STUPENDOUS","COMPENSATE","MOSQUITOS","CATERPILLAR","INTERNET","SPELLING","SUITCASES","MUSHROOMS","TRANSPORTER","BACKPACK","SLOTHFUL","BEDRIDDEN","ACCELERATE","GARGANTUAN"};
 
@@ -76,30 +76,30 @@ public class Words {
             
             switch(choice){
                 case "1":
-                    System.out.println("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    border();
                     Arrays.sort(easyWords);
         for (String easyWord : easyWords) {
             System.out.println("\t" + easyWord);
         }
-                    System.out.println("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    border();
                     this.printWords();
                     break;
                 case "2":
-                    System.out.println("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    border();
                     Arrays.sort(medWords);
         for (String medWord : medWords) {
             System.out.println("\t" + medWord);
         }
-                    System.out.println("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    border();
                     this.printWords();        
                     break;
                 case "3":
-                    System.out.println("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    border();
                     Arrays.sort(hardWords);
         for (String hardWord : hardWords) {
             System.out.println("\t" + hardWord);
         }
-                    System.out.println("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    border();
                     this.printWords();        
                     break;
                 case "4":
@@ -109,8 +109,9 @@ public class Words {
                 default:
                     System.out.println("That is not a valid selection.  Try again.");
             }while(!choice.equals("4"));
-            /*put for loops and display code here
-            use if tests to check the 'list' variable to determine which array to print*/
-            
-    }
+      }
+public void border() {       
+        System.out.println(
+        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    }        
 }

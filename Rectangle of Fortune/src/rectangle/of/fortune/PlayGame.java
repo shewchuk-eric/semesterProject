@@ -40,6 +40,9 @@ public class PlayGame {
                      nameThree = playerThree.getName();
                      playerThree.name=nameThree;
                   }
+        System.out.println(playerOne.name);
+        System.out.println(playerTwo.name);
+        System.out.println(nameThree);
         
         rounds=Rounds.playRounds();// set number of rounds to play
         
