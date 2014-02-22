@@ -34,6 +34,7 @@ public class GuessLetter {
             }
     }
         if (!notDone){
+            System.out.println("\nCongratulations Player " + playerNumber + "! You successfully guessed the word \"" + secretWord + "\"!");
             break;
         }
         //get user's guess
@@ -42,9 +43,15 @@ public class GuessLetter {
         System.out.print("\nPlayer number "+playerNumber+", enter a letter:");
         String letter = keyboard.next();
         letter = letter.toUpperCase();
-        if(letter.length() != 1 && secretWord.indexOf(letter) == -1){
-            System.out.println("You can only guess one letter at a time. Please try again.");
-            continue;
+        if(letter.length() != 1){
+                if (letter.equals(secretWord)) {
+                    guesses += letter;
+                    continue;
+                }else{
+                    System.out.println("You can only guess one letter at a time. Please try again.");
+                    playerNumber--;
+                    continue;
+                }
         }
         if(validLetters.indexOf(letter) == -1){
             System.out.println("\"" + letter + "\" is not a letter. Please enter a valid letter.");

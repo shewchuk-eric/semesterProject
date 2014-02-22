@@ -47,9 +47,10 @@ public class PlayGame {
         rounds=Rounds.playRounds();// set number of rounds to play
         
      for(played=0;played<rounds;played++){//main play game loop
-        Words newWord = new Words();//set word difficulty and choose word
+        System.out.println("\n\t*** Setup Round " + (played+1) + " ***");
+         Words newWord = new Words();//set word difficulty and choose word
         word=newWord.selectWord();
-        System.out.println("Begin round "+(played+1));
+        System.out.println("\n*** Begin round "+(played+1) + " ***");
         GuessLetter secret = new GuessLetter();//play a round
         secret.secretWord(word, players); 
         }
