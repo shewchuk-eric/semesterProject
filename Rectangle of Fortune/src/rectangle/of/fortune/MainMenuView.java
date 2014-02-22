@@ -6,12 +6,19 @@ import java.util.Scanner;
 
 /**
  *
- * @author Eric Shewchuk 
+ * @author Eric Shewchuk & Kevin Phair
  */
 public class MainMenuView {
     
     // Create instance of the HelpMenuControl (action) class
     private MainMenuControl mainMenuControl = new MainMenuControl();
+    
+    //Menu items to be displayed
+    public final static String[][] menuItems = {
+        {"1", "Start New Game"},
+        {"2", "Help and Instructions"}, 
+        {"3", "Quit and Exit Game"},
+    };
     
     // display the help menu and get the user input selection
     public void getChoice() { 
@@ -20,12 +27,7 @@ public class MainMenuView {
         Scanner inFile = new Scanner(System.in);
         
         do {            
-            border();
-            System.out.println("\tMAIN MENU\n\n\tEnter the number associated with one of the following commands:");
-            System.out.println("\n\t1 - Start New Game");
-            System.out.println("\t2 - Help and Instructions");
-            System.out.println("\t3 - Quit and Exit Game");
-            border();
+            this.display();
             
             // get user choice and direct to proper display item
             choice = inFile.nextLine();
@@ -39,6 +41,7 @@ public class MainMenuView {
                     this.mainMenuControl.getHelpMenu();
                     break;
                 case "3":
+                    System.out.println("Goodbye!");
                     break;                  
                 default:
                     border();
@@ -52,5 +55,13 @@ public class MainMenuView {
         public void border() {       
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    }
+        public final void display() {
+        System.out.println("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("\tMAIN MENU\n\n\tEnter the number associated with one of the following commands:");
+        for (int i = 0; i < MainMenuView.menuItems.length; i++) {
+            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
+        }
+        System.out.println("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     }
 }
