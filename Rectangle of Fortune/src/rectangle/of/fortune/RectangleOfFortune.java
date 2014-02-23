@@ -34,15 +34,7 @@ public class RectangleOfFortune {
         RectangleOfFortune newGame = new RectangleOfFortune();
         MainMenuView mainMenu=new MainMenuView(); //test for HelpMenuView - Move to Main Menu when ready
         mainMenu.getChoice();
-        /*test for GuessLetter - move to PlayGame later
-        GuessLetter newGuess = new GuessLetter(); 
-        newGuess.checkLetter();
-        */     
-        
-        /*lesson 2 assignment - change or remove later
-        newGame.getName();
-        newGame.displayHelp();  
-        */
+       
     }
     
         public void getName() {
