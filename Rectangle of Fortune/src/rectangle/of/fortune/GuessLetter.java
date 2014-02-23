@@ -38,6 +38,7 @@ public class GuessLetter {
         }
         if (!notDone){
             System.out.println("\nCongratulations Player " + playerNumber + "! You successfully guessed the word \"" + secretWord + "\"!");
+            playerNumber--;
             break;
         }
         
