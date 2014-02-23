@@ -8,12 +8,16 @@ import java.util.Scanner;
 
 public class PlayGame {
     
+    int playerOneScores[] = new int[10];//initialize player scores arrays - convert to a multidimensional array later!
+    int playerTwoScores[] = new int[10];
+    int playerThreeScores[] = new int[10];
+    
     Scanner inFile = new Scanner(System.in);
-    int rounds, played, players, index, cycle, flag=0;
-    char guess;
+    int rounds, played, players, totalPoints, totalPoints1, one, two, three;
     String word, nameOne, nameTwo, nameThree="";
 
  public void playGame() {
+    
         StartGame Rounds = new StartGame();
         StartGame Players = new StartGame();
         
@@ -40,31 +44,65 @@ public class PlayGame {
                      nameThree = playerThree.getName();
                      playerThree.name=nameThree;
                   }
-        System.out.println(playerOne.name);
-        System.out.println(playerTwo.name);
-        System.out.println(nameThree);
         
         rounds=Rounds.playRounds();// set number of rounds to play
-        
+        GuessLetter secret = new GuessLetter();        
      for(played=0;played<rounds;played++){//main play game loop
-        Words newWord = new Words();//set word difficulty and choose word
+        Words newWord = new Words();
+        //set word difficulty and choose word
         word=newWord.selectWord();
         System.out.println("Begin round "+(played+1));
-        GuessLetter secret = new GuessLetter();//play a round
-        secret.secretWord(word, players); 
-        }
-     
-     /*Build a function here to gather and track
-     player scores for use when rounds are completed.
-     */
-   
-        GameOver wrapUp = new GameOver();
-        wrapUp.gameEnd(); 
+        
+        //play a round
+        secret.secretWord(word, players, played);
+        
+        if(played+1==rounds){
+            GameOver wrapUp = new GameOver();
+            wrapUp.gameEnd(players);
+        }        
+     }
  }
 
-        public void border() {       
-        System.out.println(
-        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    }  
+  public void keepScore(int playerNumber, int round) {//called from the GuessLetter class
+      if(playerNumber==1){
+          playerOneScores[round]+=200;         
+          System.out.println("Player one has scored "+playerOneScores[played]);
+      }
+      else if(playerNumber==2){
+          playerTwoScores[round]+=200;
+          System.out.println("Player two has scored "+playerTwoScores[played]);
+      }         
+      else{
+          playerThreeScores[round]+=200;
+          System.out.println("Player three has scored "+playerThreeScores[played]);
+      }
+  }
+  
+     int finalScore(int contestant){//called from GameOver class
+          switch(contestant){
+          
+          case 1:
+            for(int i:playerOneScores){
+              totalPoints+=i;
+          }
+          return totalPoints;   
+          case 2:
+            for(int i:playerTwoScores){
+              totalPoints+=i;
+          }
+          return totalPoints;   
+          default:
+            for(int i:playerThreeScores){
+              totalPoints+=i;
+          }
+          return totalPoints;   
+  }
+    }
+   
 
+  public void border() {       
+        System.out.println(
+        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"); 
+
+}
 }

@@ -6,14 +6,17 @@ import java.util.Scanner;
  * @author Eric Shewchuk & Kevin Phair
  */
 public class GuessLetter {
-    char newLet1, newLet2, oldLet1, oldLet2;
-    int playerScore, goodPick, i, correct, flag=0, eachPass, playerNumber=0;
-    String word, guesses="", secretWord;
+
+    int goodPick, i, correct, eachPass, playerNumber=0, round;
+    String word,secretWord;
     String validLetters="BACDEFGHIJKLMNOPQRSTUVWXYZ";
+    PlayGame scoreTracker = new PlayGame();
     
-    public void secretWord(String s, int players) {
+    public void secretWord(String s, int players, int played) {
+        String guesses="";
         secretWord = s;//comes from Words.selectWord() - passed in by PlayGame class
         eachPass=players;
+        round=played;
 
     Scanner keyboard = new Scanner (System.in);
 
@@ -32,12 +35,12 @@ public class GuessLetter {
             else{
                 System.out.print(secretLetter + " ");
             }
-    }
+        }
         if (!notDone){
             break;
         }
+        
         //get user's guess
-       
         System.out.print("\nGuesses so far: " + guesses);
         System.out.print("\nPlayer number "+playerNumber+", enter a letter:");
         String letter = keyboard.next();
@@ -65,9 +68,11 @@ public class GuessLetter {
         }
         else{
            System.out.println("Great Guess!");
+           //add score to player - in PlayGame class
+           scoreTracker.keepScore(playerNumber, round);
            playerNumber--;
+        }
         
-    }
         if(playerNumber==eachPass){
             playerNumber=0;
         }
@@ -75,37 +80,4 @@ public class GuessLetter {
 System.out.println("");
  }        
 }
-/*
-    
-    GuessLetter() { // This will be changed later to allow for selection of number of players
-        newLet1='s';
-        newLet2='r';
-        oldLet1='c';
-        oldLet2='t';
-        goodPick=100;
-        word="class";
-        correct=3;
-    }
 
-    public void checkLetter(){
-        if(newLet1==oldLet1){
-            System.out.println("\tThat letter has already been used.\n\tPlease select another letter.");
-        }
-        else {
-            for(i=0; i<word.length(); i++){
-             if(newLet1==word.charAt(i)){
-                 playerScore+=goodPick;
-                 correct++;
-                 System.out.println("\tYou found the letter in position "+(i+1)+
-                         "\n\tYour score is now "+playerScore+" points.");
-                 if(correct==word.length()){
-                     System.out.println("\tYou Win!!!");
-                     GameOver gameOver=new GameOver();
-                     gameOver.gameEnd();
-                 }
-             }
-        }
-    }  
-}
-
-}*/
