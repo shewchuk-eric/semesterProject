@@ -46,11 +46,16 @@ public class PlayGame {
                   }
         
         rounds=Rounds.playRounds();// set number of rounds to play
-        GuessLetter secret = new GuessLetter();        
+        GuessLetter secret = new GuessLetter();
+        
      for(played=0;played<rounds;played++){//main play game loop
+
         Words newWord = new Words();
         //set word difficulty and choose word
+
+        System.out.println("\n\t*** Setup Round " + (played+1) + " ***");
         word=newWord.selectWord();
+
         System.out.println("Begin round "+(played+1));
         
         //play a round
@@ -96,8 +101,8 @@ public class PlayGame {
               totalPoints+=i;
           }
           return totalPoints;   
-  }
     }
+  }
    
 
   public void border() {       
