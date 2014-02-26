@@ -26,14 +26,14 @@ public class PlayGame {
                      border();
                      System.out.println("\tPlayer one, please enter your name");
                      border();
-                     nameOne = playerOne.getName();
+                     nameOne = playerOne.getName(0);
                      playerOne.name=nameOne;
                      
               Player playerTwo = new Player();//initialize player two
                      border();
                      System.out.println("\tPlayer two, please enter your name");
                      border();
-                     nameTwo = playerTwo.getName();
+                     nameTwo = playerTwo.getName(1);
                      playerTwo.name=nameTwo;
                      
         if(players==3){
@@ -41,7 +41,7 @@ public class PlayGame {
                      border();
                      System.out.println("\tPlayer three, please enter your name");
                      border();
-                     nameThree = playerThree.getName();
+                     nameThree = playerThree.getName(2);
                      playerThree.name=nameThree;
                   }
         

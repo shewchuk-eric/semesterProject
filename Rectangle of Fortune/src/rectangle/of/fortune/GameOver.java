@@ -8,15 +8,21 @@ package rectangle.of.fortune;
 public class GameOver {
     PlayGame finalTotal1 = new PlayGame();        
     PlayGame finalTotal2 = new PlayGame();  
-    PlayGame finalTotal3 = new PlayGame();  
+    PlayGame finalTotal3 = new PlayGame();
+    Player pOne = new Player();
+    Player pTwo = new Player();
+    Player pThree = new Player();
         int p1, p2, p3;
-    String player1="eric", player2="tim", player3="bob";//names for testing only - get correct names later
+    String player1, player2, player3;//names for testing only - get correct names later
     
     public void gameEnd(int players){//called from PlayGame class
 
              p1=finalTotal1.finalScore(1);//these call back to the PlayGame class
              p2=finalTotal2.finalScore(2);
              p3=finalTotal3.finalScore(3);
+             player1=pOne.sendName(0);
+             player2=pTwo.sendName(1);
+             player3=pThree.sendName(2);
             
             if (players==2){
                 if(p1>p2){//first test
