@@ -82,7 +82,7 @@ public class GuessLetter {
         if(guesses.indexOf(letter)<0){
         guesses += letter;
         char c = letter.charAt(0);
-        for(int i =0; i < secretWord.length(); i++){
+        for(i =0; i < secretWord.length(); i++){
         if(secretWord.charAt(i) == c){
         count++;
                 }
