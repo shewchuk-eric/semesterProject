@@ -34,7 +34,7 @@ public class GuessLetter {
             for (char secretLetter : secretWord.toCharArray()){//iterates over the letters
             if(guesses.indexOf(secretLetter) == -1){ //checks to see what letters that have already been guessed are in the secret word 
             System.out.print("_ "); //prints out underscores with a space between each one to show missing letters
-            letterCounter=0; //resets the letter counter to 0
+            moneyCount=0; //resets the letter counter to 0
             notDone = true; //Because there are still unguessed letters in the secret word, the game is not yet done.
         }
            
