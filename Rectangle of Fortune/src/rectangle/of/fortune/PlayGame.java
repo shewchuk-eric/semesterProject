@@ -68,17 +68,17 @@ public class PlayGame {
      }
  }
 
-  public void keepScore(int playerNumber, int round) {//called from the GuessLetter class
+  public void keepScore(int playerNumber, int round, int pointForGuess) {//called from the GuessLetter class
       if(playerNumber==1){
-          playerOneScores[round]+=200;         
+          playerOneScores[round]+=pointForGuess;         
           System.out.println("Player one has scored "+playerOneScores[round]);
       }
       else if(playerNumber==2){
-          playerTwoScores[round]+=200;
+          playerTwoScores[round]+=pointForGuess;
           System.out.println("Player two has scored "+playerTwoScores[round]);
       }         
       else{
-          playerThreeScores[round]+=200;
+          playerThreeScores[round]+=pointForGuess;
           System.out.println("Player three has scored "+playerThreeScores[round]);
       }
   }

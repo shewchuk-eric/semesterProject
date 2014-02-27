@@ -8,10 +8,11 @@ import java.util.Scanner;
  */
 public class GuessLetter {
 
-    int goodPick, count, spinAmount, i, correct, eachPass, playerNumber=0, round;
-    int[] money = {1000,250,300,350,400,450,500,550,600,650,750,800,900,1250,1500,20,10,5};
+    int goodPick, moneyCount, spinAmount, i, correct, eachPass, playerNumber=0, round, letterCounter;
+    int[] money = {200,225,250,275,300,325,350,375,400,425,450,500,525,550,575,600,20,10,5};
     String word,secretWord;
     String validLetters="BACDEFGHIJKLMNOPQRSTUVWXYZ";
+    String vowels="AEIOU";
     PlayGame scoreTracker = new PlayGame();
     
     public void secretWord(String s, int players, int played) {
@@ -31,25 +32,25 @@ public class GuessLetter {
         spinAmount=money[rnd];
         System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nHere's your word:");
             for (char secretLetter : secretWord.toCharArray()){//iterates over the letters
-            if(guesses.indexOf(secretLetter) == -1){
-            System.out.print("_ ");
-            count=0;
-            notDone = true;
+            if(guesses.indexOf(secretLetter) == -1){ //checks to see what letters that have already been guessed are in the secret word 
+            System.out.print("_ "); //prints out underscores with a space between each one to show missing letters
+            letterCounter=0; //resets the letter counter to 0
+            notDone = true; //Because there are still unguessed letters in the secret word, the game is not yet done.
         }
            
             else{
-                System.out.print(secretLetter + " ");
+                System.out.print(secretLetter + " ");// If there are some guessed letters, it will display the guessed letters with a space next to them (for aesthetic purposes)
             }
         }
-        if (!notDone){
-            System.out.println("\nCongratulations Player " + playerNumber + "! You successfully guessed the word \"" + secretWord + "\"!");
-            playerNumber--;
-            break;
+        if (!notDone){// if the game is not not done (meaning it IS done)
+            System.out.println("\nCongratulations Player " + playerNumber + "! You successfully guessed the word \"" + secretWord + "\"!"); //congratulates the last player to guess and tells them the full word.
+            playerNumber--;//sets player number back 1 for the next round. <--Not sure this is necessary...
+            break;//breaks out of the for loop and starts another round.
         }
         
         //get user's guess
-        System.out.println("\nGuesses so far: " + guesses);
-        if(spinAmount<10){
+        System.out.println("\nGuesses so far: " + guesses);//shows the guesses so far from each user
+        if(spinAmount<10){//checks to see what the randomizer has 
             System.out.println("Bankrupt! You lose all your money!");
             //scoreTracker multiply score by 0.
             continue;
@@ -81,10 +82,10 @@ public class GuessLetter {
         }
         if(guesses.indexOf(letter)<0){
         guesses += letter;
-        char c = letter.charAt(0);
-        for(i =0; i < secretWord.length(); i++){
-        if(secretWord.charAt(i) == c){
-        count++;
+        for(int zed =0; zed < secretWord.length(); zed++){
+        char countLetters = letter.charAt(0);
+        if(secretWord.charAt(zed) == countLetters){
+        moneyCount++;
                 }
             }
         }
@@ -99,11 +100,11 @@ public class GuessLetter {
         }
         else{
            System.out.println("Great Guess!");
-           int pointForGuess = spinAmount * count;
-           System.out.println("$" +spinAmount + " x " + count + " = $" + pointForGuess);
+           int pointForGuess = spinAmount * moneyCount;
+           System.out.println("$" +spinAmount + " x " + moneyCount + " = $" + pointForGuess);
            //add pointForGuess to scoreTracker
            //add score to player - in PlayGame class
-           scoreTracker.keepScore(playerNumber, round);
+           scoreTracker.keepScore(playerNumber, round, pointForGuess);
            playerNumber--;
         }
         
