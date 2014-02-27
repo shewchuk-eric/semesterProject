@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class GuessLetter {
 
     int goodPick, moneyCount, spinAmount, i, correct, eachPass, playerNumber=0, round, letterCounter;
-    int[] money = {200,225,250,275,300,325,350,375,400,425,450,500,525,550,575,600,20,10,5};
+    int[] money = {200,225,250,275,300,325,350,375,400,425,450,500,525,550,575,600};
     String word,secretWord;
     String validLetters="BACDEFGHIJKLMNOPQRSTUVWXYZ";
     String vowels="AEIOU";
@@ -50,18 +50,8 @@ public class GuessLetter {
         
         //get user's guess
         System.out.println("\nGuesses so far: " + guesses);//shows the guesses so far from each user
-        if(spinAmount<10){//checks to see what the randomizer has 
-            System.out.println("Bankrupt! You lose all your money!");
-            //scoreTracker multiply score by 0.
-            continue;
-        }
-            else if(spinAmount<100){
-                System.out.println("Sorry! You lose your turn!");
-                continue;
-            }
-            else{
-                System.out.println("Each correct guess gets you $" + spinAmount + " per letter.");
-        }
+                System.out.println("Each correct guess gets you " + spinAmount + " points per letter.");
+        
         System.out.print("Player number "+playerNumber+", enter a letter:");
         String letter = keyboard.next();
         letter = letter.toUpperCase();
