@@ -54,13 +54,10 @@ public class HelpMenuView {
                     break;
                 default: 
                     System.out.println("Invalid selection. Please enter a valid selection.");
-                    continue;
             }
         } while (!choice.equals("6"));
-         return;
     }
 
-        // displays the help menu - is it worth the trouble to use an array and loop instead of just a direct print?
     public final void display() {
         border();
         System.out.println("\tHELP MENU\n\n\tEnter the number associated with one of the following commands:");

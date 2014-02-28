@@ -47,10 +47,8 @@ public class MainMenuView {
                     border();
                     System.out.println("Invalid selection. Please enter a valid selection.");
                     border();
-                    continue;
             }
         } while (!choice.equals("3"));
-         return;
     }
         public void border() {       
         System.out.println(
