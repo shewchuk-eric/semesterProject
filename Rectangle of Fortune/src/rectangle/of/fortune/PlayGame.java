@@ -17,8 +17,8 @@ public class PlayGame implements Serializable {
     static int playerThreeScores[] = new int[10];
     
     Scanner inFile = new Scanner(System.in);
-    int rounds, played, players, totalPoints;
-    String word, nameOne, nameTwo, nameThree="";
+    static int rounds, played, players, totalPoints;
+    static String word, nameOne, nameTwo, nameThree="";
 
  public void playGame() {
     

@@ -12,10 +12,9 @@ public class Player implements Serializable {
     
     static String playerNames[] = new String[3];//initialize player scores arrays - convert to a multidimensional array later!
     String name;
-    int score, validName;
+    int validName;
     
     Player() { 
-        score=0;
         name="";
     }
  

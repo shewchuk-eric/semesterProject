@@ -14,8 +14,10 @@ public class StartGame implements Serializable {
     }
 
         Scanner inFile = new Scanner(System.in);  
-        String choice, nameOne, nameTwo, nameThree="";
-        int rounds, level, players, nameLength;
+        static String nameOne, nameTwo, nameThree="";
+        String choice;
+        static int rounds, level, players;
+        int nameLength;
         
     int playerCount() {// called from PlayGame class - choose the number of players 
         border();

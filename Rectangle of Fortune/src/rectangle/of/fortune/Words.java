@@ -14,17 +14,19 @@ import java.util.Arrays;
  */
 public class Words implements Serializable{
     
-    Words() {
-        
+    Words() {  
     }
 
     Scanner inFile = new Scanner(System.in);
-    String word, choice;
-    int level, i=0, rnd, list=0;
-    public Vector<String> vault = new Vector<String>();
-    public String[] easyWords = {"SHOUT","LOVE","BEST","BOOK","WATER","LABEL","EAST","FROG","TWIST","WRAP","PARK","SMALL","TRAP","SLIP","SCOOTER","TRUCK","WRITE","FACE","FENCE","BLOCK"};
-    public String[] medWords = {"EDIBLE","PEANUT","SPIDER","SLANTED","SCANNER","QUIETLY","AMAZING","PICKLED","OMELET","AVOCADO","JAZZED","STUPOR","FALLEN","TRIFLE","PEPPER","SNOWING","BICYCLE","WEASEL","FAILURE","FLATBED"};
-    public String[] hardWords = {"ALPHABET","JEALOUS","ENORMITY","BRANDING","IGNORANT","JUICEBOX","STUPENDOUS","COMPENSATE","MOSQUITOS","CATERPILLAR","INTERNET","SPELLING","SUITCASES","MUSHROOMS","TRANSPORTER","BACKPACK","SLOTHFUL","BEDRIDDEN","ACCELERATE","GARGANTUAN"};
+    static String word, choice;
+    static int level;
+    int i=0, rnd, list=0;
+    
+    Vector<String> vault = new Vector<String>();
+    
+    private final String[] easyWords = {"SHOUT","LOVE","BEST","BOOK","WATER","LABEL","EAST","FROG","TWIST","WRAP","PARK","SMALL","TRAP","SLIP","SCOOTER","TRUCK","WRITE","FACE","FENCE","BLOCK"};
+    private final String[] medWords = {"EDIBLE","PEANUT","SPIDER","SLANTED","SCANNER","QUIETLY","AMAZING","PICKLED","OMELET","AVOCADO","JAZZED","STUPOR","FALLEN","TRIFLE","PEPPER","SNOWING","BICYCLE","WEASEL","FAILURE","FLATBED"};
+    private final String[] hardWords = {"ALPHABET","JEALOUS","ENORMITY","BRANDING","IGNORANT","JUICEBOX","STUPENDOUS","COMPENSATE","MOSQUITOS","CATERPILLAR","INTERNET","SPELLING","SUITCASES","MUSHROOMS","TRANSPORTER","BACKPACK","SLOTHFUL","BEDRIDDEN","ACCELERATE","GARGANTUAN"};
 
     String selectWord() {// gets called from the PlayGame class
         StartGame difficulty = new StartGame();
@@ -33,7 +35,7 @@ public class Words implements Serializable{
             case 1:
                 do{
                  rnd = new Random().nextInt(easyWords.length);
-                 this.word = easyWords[rnd];
+                 word = easyWords[rnd];
               for(String test:vault)
                   if(test.equals(word)){
                       i=1;
@@ -45,7 +47,7 @@ public class Words implements Serializable{
             case 2:
                 do{
                  rnd = new Random().nextInt(medWords.length);
-                 this.word = medWords[rnd];
+                 word = medWords[rnd];
                  for(String test:vault)
                   if(word.equals(test)){
                       i=1;
@@ -57,7 +59,7 @@ public class Words implements Serializable{
             case 3:
                 do{
                  rnd = new Random().nextInt(hardWords.length);
-                 this.word = hardWords[rnd];
+                 word = hardWords[rnd];
                  for(String test:vault)
                   if(word.equals(test)){
                       i=1;

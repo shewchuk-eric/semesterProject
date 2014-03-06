@@ -10,7 +10,6 @@ import java.util.Scanner;
  */
 public class MainMenuView implements Serializable {
     
-    // Create instance of the HelpMenuControl (action) class
     MainMenuView() {
     }
     

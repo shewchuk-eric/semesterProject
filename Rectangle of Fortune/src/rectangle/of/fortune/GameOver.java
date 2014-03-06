@@ -1,6 +1,5 @@
 
 package rectangle.of.fortune;
-
 import java.io.Serializable;
 
 /**
@@ -20,7 +19,7 @@ public class GameOver implements Serializable {
     Player pThree = new Player();
     
     int p1, p2, p3;
-    String player1, player2, player3;//names for testing only - get correct names later
+    String player1, player2, player3;
     
     public void gameEnd(int players){//called from PlayGame class
 
