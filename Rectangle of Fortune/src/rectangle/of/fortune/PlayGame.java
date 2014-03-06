@@ -1,12 +1,16 @@
 
 package rectangle.of.fortune;
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  * @author Eric Shewchuk
  */
 
-public class PlayGame {
+public class PlayGame implements Serializable {
+    
+    PlayGame() {
+    }
     
     static int playerOneScores[] = new int[10];//initialize player scores arrays - convert to a multidimensional array later!
     static int playerTwoScores[] = new int[10];
@@ -99,9 +103,8 @@ public class PlayGame {
           return totalPoints;   
     }
 
-  public void border() {       
+  private void border() {       
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"); 
-
-}
+    }
 }

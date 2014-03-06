@@ -5,14 +5,18 @@ package rectangle.of.fortune;
  *
  * @author Eric Shewchuk
  */
+import java.io.Serializable;
 import java.util.Scanner;
-public class HelpMenuView {
+public class HelpMenuView implements Serializable{
+    
+    HelpMenuView() {
+    }
     
     Scanner inFile = new Scanner(System.in);
     String choice;
 
     // Menu items to be displayed    
-    public final static String[][] menuItems = {
+    private final static String[][] menuItems = {
         {"1", "Object of Game"},
         {"2", "Scoring"}, 
         {"3", "Options"},
@@ -51,6 +55,8 @@ public class HelpMenuView {
                     this.helpMenuControl.wordList();
                     break;
                 case "6":
+                    MainMenuView goBack = new MainMenuView();
+                    goBack.getChoice();
                     break;
                 default: 
                     System.out.println("Invalid selection. Please enter a valid selection.");
@@ -58,7 +64,7 @@ public class HelpMenuView {
         } while (!choice.equals("6"));
     }
 
-    public final void display() {
+    private void display() {
         border();
         System.out.println("\tHELP MENU\n\n\tEnter the number associated with one of the following commands:");
         for (int i = 0; i < HelpMenuView.menuItems.length; i++) {
@@ -66,7 +72,7 @@ public class HelpMenuView {
         }
         border();
     }
-      public void border() {       
+      private void border() {       
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 }

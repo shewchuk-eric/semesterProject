@@ -2,6 +2,7 @@
 
 package rectangle.of.fortune;
 
+import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Vector;
@@ -11,7 +12,11 @@ import java.util.Arrays;
  *
  * @author Eric Shewchuk & Kevin Phair
  */
-public class Words {
+public class Words implements Serializable{
+    
+    Words() {
+        
+    }
 
     Scanner inFile = new Scanner(System.in);
     String word, choice;
@@ -65,7 +70,7 @@ public class Words {
           return word;
     }
     
-    public void printWords() {
+    void printWords() {
         System.out.println("\tPlease choose the difficulty level of the words you want to list.\n"
                 + "\t1 - Easy\n"
                 + "\t2 - Medium\n"
@@ -110,7 +115,7 @@ public class Words {
                     System.out.println("That is not a valid selection.  Try again.");
             }while(!choice.equals("4"));
       }
-public void border() {       
+private void border() {       
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }        

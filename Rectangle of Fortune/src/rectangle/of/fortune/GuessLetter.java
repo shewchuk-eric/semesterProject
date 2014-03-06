@@ -1,12 +1,16 @@
 
 package rectangle.of.fortune;
+import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
 /**
  *
  * @author Eric Shewchuk & Kevin Phair
  */
-public class GuessLetter {
+public class GuessLetter implements Serializable {
+    
+    GuessLetter() {
+    }
 
     int goodPick, moneyCount, spinAmount, i, correct, eachPass, playerNumber=0, round, letterCounter;
     int[] money = {200,225,250,275,300,325,350,375,400,425,450,500,525,550,575,600};

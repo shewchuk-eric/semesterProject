@@ -7,8 +7,9 @@ package rectangle.of.fortune;
  * @author Eric Shewchuk
  */
 public class MainMenuControl {
-    int players, rounds;
-    String nameOne, nameTwo, nameThree, word;
+    
+    MainMenuControl() {
+    }
         
         public void newGame() {
         PlayGame newGame = new PlayGame();
@@ -19,11 +20,5 @@ public class MainMenuControl {
          // Create instance of the HelpMenuView class
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.getChoice();
-    }
-        
-        
-    public void border() {       
-        System.out.println(
-        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    }    
+    }   
 }

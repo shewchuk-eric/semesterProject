@@ -1,17 +1,18 @@
 
 
 package rectangle.of.fortune;
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Eric Shewchuk
  */
-public class Player {
+public class Player implements Serializable {
     
     static String playerNames[] = new String[3];//initialize player scores arrays - convert to a multidimensional array later!
     String name;
-    int score, validName, position;
+    int score, validName;
     
     Player() { 
         score=0;
@@ -39,7 +40,7 @@ public class Player {
             return name;
         }
         
-   public void border() {       
+   private void border() {       
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }    

@@ -1,20 +1,23 @@
 
 
 package rectangle.of.fortune;
-
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Eric Shewchuk & Kevin Phair
  */
-public class MainMenuView {
+public class MainMenuView implements Serializable {
     
     // Create instance of the HelpMenuControl (action) class
-    private MainMenuControl mainMenuControl = new MainMenuControl();
+    MainMenuView() {
+    }
+    
+    MainMenuControl mainMenuControl = new MainMenuControl();    
     
     //Menu items to be displayed
-    public final static String[][] menuItems = {
+    private final static String[][] menuItems = {
         {"1", "Start New Game"},
         {"2", "Help and Instructions"}, 
         {"3", "Quit and Exit Game"},
@@ -50,11 +53,11 @@ public class MainMenuView {
             }
         } while (!choice.equals("3"));
     }
-        public void border() {       
+        private void border() {       
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
-        public final void display() {
+        private void display() {
         border();
         System.out.println("\tMAIN MENU\n\n\tEnter the number associated with one of the following commands:");
         for (int i = 0; i < MainMenuView.menuItems.length; i++) {

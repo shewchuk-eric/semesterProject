@@ -1,11 +1,13 @@
 package rectangle.of.fortune;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  * @author Eric Shewchuk
  */
-public class RectangleOfFortune {
+public class RectangleOfFortune implements Serializable {
+    
        int rounds=3, letters, found, level;  /** players is how many players in game - game proposal suggests 2 or 3
          * rounds is how many rounds to play - limit to a certain number like 5?
          * letters is how many letters in the word being played
@@ -28,10 +30,7 @@ public class RectangleOfFortune {
                +"score of 400 will be added to the player.)  Choosing the last\n"
                +"letter or correctly guessing the word will score bonus points!";
        
-       char playWord; // this is the storage container for the word being played
-       
     public static void main(String[] args) {
-        RectangleOfFortune newGame = new RectangleOfFortune();
         MainMenuView mainMenu=new MainMenuView(); //test for HelpMenuView - Move to Main Menu when ready
         mainMenu.getChoice();
        
@@ -42,9 +41,9 @@ public class RectangleOfFortune {
              System.out.println("Please enter your name");
              this.name = input.next();
         }
+        
         public void displayHelp() {
             System.out.println("\nWelcome " + this.name + "\n");
             System.out.println(this.instructions);
         }
-
 }

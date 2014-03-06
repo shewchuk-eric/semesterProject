@@ -1,18 +1,25 @@
 
 package rectangle.of.fortune;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Eric Shewchuk
  */
-public class GameOver {
+public class GameOver implements Serializable {
+    
+    GameOver() {
+    }
+    
     PlayGame finalTotal1 = new PlayGame();        
     PlayGame finalTotal2 = new PlayGame();  
     PlayGame finalTotal3 = new PlayGame();
     Player pOne = new Player();
     Player pTwo = new Player();
     Player pThree = new Player();
-        int p1, p2, p3;
+    
+    int p1, p2, p3;
     String player1, player2, player3;//names for testing only - get correct names later
     
     public void gameEnd(int players){//called from PlayGame class

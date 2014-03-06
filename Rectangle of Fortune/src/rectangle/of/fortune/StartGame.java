@@ -1,18 +1,19 @@
 
 
 package rectangle.of.fortune;
-
-
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Eric Shewchuk
  */
-public class StartGame {
+public class StartGame implements Serializable {
+    
+    StartGame(){
+    }
 
-    Scanner inFile = new Scanner(System.in);  
-        
+        Scanner inFile = new Scanner(System.in);  
         String choice, nameOne, nameTwo, nameThree="";
         int rounds, level, players, nameLength;
         
@@ -109,7 +110,7 @@ public class StartGame {
         return level;
     }
 
-    public void border() {       
+    private void border() {       
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }    

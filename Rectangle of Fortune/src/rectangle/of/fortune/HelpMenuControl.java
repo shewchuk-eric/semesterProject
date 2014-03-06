@@ -2,17 +2,21 @@
 
 package rectangle.of.fortune;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Eric Shewchuk
  */
-public class HelpMenuControl {
+public class HelpMenuControl implements Serializable {
     
+    HelpMenuControl() {
+    }    
+    
+        String choice;
         Words wordList = new Words();
         MainMenuView goMain = new MainMenuView();
-        String choice;
         Scanner inFile = new Scanner(System.in);    
 
     public void gameObject() {
@@ -101,7 +105,7 @@ public class HelpMenuControl {
         while (!choice.equals("2"));
     }
     
-    public void border() {       
+     private void border() {       
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
