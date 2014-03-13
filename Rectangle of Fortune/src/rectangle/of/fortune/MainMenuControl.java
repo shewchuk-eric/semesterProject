@@ -19,6 +19,6 @@ public class MainMenuControl {
         public void getHelpMenu() {
          // Create instance of the HelpMenuView class
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.getChoice();
+        helpMenuView.helpMenu();
     }   
 }

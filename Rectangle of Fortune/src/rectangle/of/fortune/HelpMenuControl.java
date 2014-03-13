@@ -1,7 +1,6 @@
 
 
 package rectangle.of.fortune;
-
 import java.io.Serializable;
 import java.util.Scanner;
 
@@ -17,7 +16,7 @@ public class HelpMenuControl implements Serializable {
         String choice;
         Words wordList = new Words();
         MainMenuView goMain = new MainMenuView();
-        Scanner inFile = new Scanner(System.in);    
+        Scanner inFile = new Scanner(System.in); 
 
     public void gameObject() {
         System.out.println();
@@ -97,7 +96,7 @@ public class HelpMenuControl implements Serializable {
                 case "2":
                     break;
                 case "3":
-                    this.goMain.getChoice();
+                    this.goMain.mainMenu();
                     break;
                 default: 
                     System.out.println("Invalid selection. Please enter a valid selection.");

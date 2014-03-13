@@ -5,18 +5,18 @@ package rectangle.of.fortune;
  *
  * @author Eric Shewchuk
  */
-import java.io.Serializable;
-import java.util.Scanner;
-public class HelpMenuView implements Serializable{
+
+public class HelpMenuView extends Menu{
     
     HelpMenuView() {
     }
     
-    Scanner inFile = new Scanner(System.in);
-    String choice;
-
+        // Create instance of the HelpMenuControl (action) class
+    HelpMenuControl helpMenuControl = new HelpMenuControl();
+    
     // Menu items to be displayed    
-    private final static String[][] menuItems = {
+    static String[][] menuItems = {
+        {"", "HELP MENU"},
         {"1", "Object of Game"},
         {"2", "Scoring"}, 
         {"3", "Options"},
@@ -24,21 +24,13 @@ public class HelpMenuView implements Serializable{
         {"5", "See list of words"},
         {"6", "Back to Main Menu"}
     };
-    
-    // Create instance of the HelpMenuControl (action) class
-    HelpMenuControl helpMenuControl = new HelpMenuControl();
   
     // display the help menu and get the user input selection
-    public void getChoice() {
-        
-        do {            
-            this.display(); // display the menu
-            
-            // get user choice and direct to proper display item
-            choice = inFile.nextLine();
-            choice = choice.trim().toUpperCase();
-            
-            switch (choice) {
+    public void helpMenu() {
+        do{
+            Menu.getChoice(menuItems);            
+             
+            switch (newChoice) {
                 case "1":
                     this.helpMenuControl.gameObject();
                     break;
@@ -56,24 +48,11 @@ public class HelpMenuView implements Serializable{
                     break;
                 case "6":
                     MainMenuView goBack = new MainMenuView();
-                    goBack.getChoice();
+                    goBack.mainMenu();
                     break;
                 default: 
                     System.out.println("Invalid selection. Please enter a valid selection.");
             }
-        } while (!choice.equals("6"));
+        }while (!newChoice.equals("6"));
     }
-
-    private void display() {
-        border();
-        System.out.println("\tHELP MENU\n\n\tEnter the number associated with one of the following commands:");
-        for (int i = 0; i < HelpMenuView.menuItems.length; i++) {
-            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
-        }
-        border();
-    }
-      private void border() {       
-        System.out.println(
-        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-}
 }

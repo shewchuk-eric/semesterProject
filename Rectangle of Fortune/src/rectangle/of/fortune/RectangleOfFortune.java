@@ -6,7 +6,7 @@ package rectangle.of.fortune;
 public class RectangleOfFortune {
        
     public static void main(String[] args) {
-        MainMenuView mainMenu=new MainMenuView(); //test for HelpMenuView - Move to Main Menu when ready
-        mainMenu.getChoice();
+        MainMenuView mainMenu=new MainMenuView();
+        mainMenu.mainMenu();
     }
 }

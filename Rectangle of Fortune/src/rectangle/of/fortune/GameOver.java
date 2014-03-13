@@ -78,6 +78,8 @@ public class GameOver implements Serializable {
                 +"Second place is "+player2+" with a score of "+p2+" which is "+(p2-p1)+" points higher than third place.\n"
                 +"Sorry "+player1+", but you lost with a score of "+p1+".");
             }           
-       }    
+       }
+        MainMenuView mainMenu=new MainMenuView();
+        mainMenu.mainMenu();
    }
 }

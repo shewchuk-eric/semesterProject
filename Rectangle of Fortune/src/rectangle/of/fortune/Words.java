@@ -111,7 +111,7 @@ public class Words implements Serializable{
                     break;
                 case "4":
                     HelpMenuView goHelp = new HelpMenuView();
-                    goHelp.getChoice();
+                    goHelp.helpMenu();
                     break;
                 default:
                     System.out.println("That is not a valid selection.  Try again.");
