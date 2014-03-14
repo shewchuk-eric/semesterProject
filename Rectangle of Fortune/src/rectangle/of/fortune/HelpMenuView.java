@@ -15,7 +15,7 @@ public class HelpMenuView extends Menu{
     HelpMenuControl helpMenuControl = new HelpMenuControl();
     
     // Menu items to be displayed    
-    static String[][] menuItems = {
+    static final String[][] menuItems = {
         {"", "HELP MENU"},
         {"1", "Object of Game"},
         {"2", "Scoring"}, 

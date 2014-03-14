@@ -14,7 +14,7 @@ public class GuessLetter implements Serializable {
 
     int moneyCount, spinAmount, eachPass, playerNumber=0, round;
     int[] money = {200,225,250,275,300,325,350,375,400,425,450,500,525,550,575,600};
-    String word,secretWord;
+    String word, secretWord;
     String validLetters="BACDEFGHIJKLMNOPQRSTUVWXYZ";
     String vowels="AEIOU";
     PlayGame scoreTracker = new PlayGame();

@@ -83,30 +83,30 @@ public class Words implements Serializable{
             
             switch(choice){
                 case "1":
-                    border();
+                    Menu.border();
                     Arrays.sort(easyWords);
         for (String easyWord : easyWords) {
             System.out.println("\t" + easyWord);
         }
-                    border();
+                    Menu.border();
                     this.printWords();
                     break;
                 case "2":
-                    border();
+                    Menu.border();
                     Arrays.sort(medWords);
         for (String medWord : medWords) {
             System.out.println("\t" + medWord);
         }
-                    border();
+                    Menu.border();
                     this.printWords();        
                     break;
                 case "3":
-                    border();
+                    Menu.border();
                     Arrays.sort(hardWords);
         for (String hardWord : hardWords) {
             System.out.println("\t" + hardWord);
         }
-                    border();
+                    Menu.border();
                     this.printWords();        
                     break;
                 case "4":
@@ -117,8 +117,4 @@ public class Words implements Serializable{
                     System.out.println("That is not a valid selection.  Try again.");
             }while(!choice.equals("4"));
       }
-private void border() {       
-        System.out.println(
-        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    }        
 }

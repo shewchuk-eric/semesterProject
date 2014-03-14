@@ -20,17 +20,17 @@ public class HelpMenuControl implements Serializable {
 
     public void gameObject() {
         System.out.println();
-        this.border();             
+        Menu.border();             
         System.out.println( 
                 "\tThis is a version of the well-known and popular \"Hangman\"  "
                 + "\n\tgame.  The object is to successfully guess the hidden "
                 + "\n\tword.");
-        border();
+        Menu.border();
     }
        
     public void scoreGame() {
         System.out.println();
-        border();     
+        Menu.border();     
         System.out.println( 
                  "\tPlayers score points by guessing a letter that is contained "
                 + "\n\tin the word being played.  Each letter is worth 200 points. "
@@ -41,12 +41,12 @@ public class HelpMenuControl implements Serializable {
                 + "\n\twill be awarded a 500 point bonus.  The player with the most "
                 + "\n\tpoints after the last round wins the game."
                 ); 
-        border();
+        Menu.border();
     }
             
     public void gameOptions() {
         System.out.println();
-        border();     
+        Menu.border();     
         System.out.println( 
                 "\tThis game has three options which can be set by selecting "
                 + "\n\t\"Options\" from the main menu.  The options are:"
@@ -57,12 +57,12 @@ public class HelpMenuControl implements Serializable {
                 + "\n\t3) Difficulty.  You can choose from \"Easy\", \"Medium\","
                 + "\n\tor \"Hard\".  Medium is the default."
                 ); 
-        border();
+        Menu.border();
     }
                     
     public void gamePlay() {
         System.out.println();
-        border();     
+        Menu.border();     
         System.out.println( 
                 "\tPlayers take turns guessing a letter.  If the letter exists in "
                 + "\n\tthe word then the players score will increase.  After a "
@@ -72,12 +72,12 @@ public class HelpMenuControl implements Serializable {
                 + "\n\tis guessed a new round will start unless the chosen "
                 + "\n\tnumber of rounds has been completed."
                 ); 
-        border();
+        Menu.border();
     }
     
     public void wordList() {
         System.out.println();
-        border();
+        Menu.border();
         System.out.println(
                 "\tYou can choose to print a list of the words that can be played."
                 + "\n\tYou will be given the option to list the level of difficulty"
@@ -85,7 +85,7 @@ public class HelpMenuControl implements Serializable {
                         + "\t1 - Choose a word list to display\n"
                         + "\t2 - Go back to Help Menu\n"
                         + "\t3 - Go back to Main Menu");
-        border();
+        Menu.border();
             choice = inFile.nextLine();
             choice = choice.trim().toUpperCase();
             
@@ -102,11 +102,6 @@ public class HelpMenuControl implements Serializable {
                     System.out.println("Invalid selection. Please enter a valid selection.");
             }
         while (!choice.equals("2"));
-    }
-    
-     private void border() {       
-        System.out.println(
-        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
 }
 

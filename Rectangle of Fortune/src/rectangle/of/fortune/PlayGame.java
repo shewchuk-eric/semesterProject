@@ -27,24 +27,24 @@ public class PlayGame implements Serializable {
         
         players=Players.playerCount();//get number of players from user     
               Player playerOne = new Player();//initialize player one
-                     border();
+                     Menu.border();
                      System.out.println("\tPlayer one, please enter your name");
-                     border();
+                     Menu.border();
                      nameOne = playerOne.getName(0);
                      playerOne.name=nameOne;
                      
               Player playerTwo = new Player();//initialize player two
-                     border();
+                     Menu.border();
                      System.out.println("\tPlayer two, please enter your name");
-                     border();
+                     Menu.border();
                      nameTwo = playerTwo.getName(1);
                      playerTwo.name=nameTwo;
                      
         if(players==3){
               Player playerThree = new Player();//initialize player three if needed
-                     border();
+                     Menu.border();
                      System.out.println("\tPlayer three, please enter your name");
-                     border();
+                     Menu.border();
                      nameThree = playerThree.getName(2);
                      playerThree.name=nameThree;
                   }
@@ -101,10 +101,5 @@ public class PlayGame implements Serializable {
               break;
           }
           return totalPoints;   
-    }
-
-  private void border() {       
-        System.out.println(
-        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"); 
     }
 }

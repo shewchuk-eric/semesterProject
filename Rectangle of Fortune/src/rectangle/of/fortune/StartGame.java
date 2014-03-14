@@ -20,9 +20,9 @@ public class StartGame implements Serializable {
         int nameLength;
         
     int playerCount() {// called from PlayGame class - choose the number of players 
-        border();
-        System.out.println("\tWill there be two or three players?");
-        border();
+        Menu.border();
+        System.out.println("\tWill there be (2) or (3) players?");
+        Menu.border();
             choice = inFile.nextLine();//get user choice
             choice = choice.trim().toUpperCase();//convert to UPPERCASE
             if(!choice.equals("2") && !choice.equals("3")){//validate entry from user
@@ -39,9 +39,9 @@ public class StartGame implements Serializable {
     }
     
     int playRounds() {//choose the number of rounds to play
-        border();
+        Menu.border();
         System.out.println("\tHow many rounds would you like to play?\n\tYou may play up to ten rounds.");
-        border();
+        Menu.border();
         choice = inFile.nextLine();
         choice = choice.trim().toUpperCase();
         switch(choice){
@@ -76,21 +76,21 @@ public class StartGame implements Serializable {
                     rounds=10;
                     break;                    
              default:
-                 border();
+                 Menu.border();
                  System.out.println("\tInvalid selection. Please enter a number between 1 and 10");
-                 border();
+                 Menu.border();
                  playRounds();
         }
         return rounds;
     }
     
     int difficulty() {//choose the difficulty level
-        border();
-        System.out.println("\tHow difficult would you like the words to be?\n\tPlease choose from the following:\n"+
+        Menu.border();
+        System.out.println("\tHow difficult would you like the word to be?\n\tPlease choose from the following:\n"+
                 "\t1 - Easy\n"+
                 "\t2 - Medium\n"+
                 "\t3 - Hard");
-        border();
+        Menu.border();
         choice = inFile.nextLine();
         choice = choice.trim().toUpperCase();
         switch(choice){
@@ -104,16 +104,11 @@ public class StartGame implements Serializable {
                     level=3;
              return level;
              default:
-                 border();
+                 Menu.border();
                  System.out.println("\tInvalid selection. Please choose 1 for easy, 2 for medium, or 3 for hard.");
-                 border();
+                 Menu.border();
                  difficulty();
         }
         return level;
     }
-
-    private void border() {       
-        System.out.println(
-        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    }    
 }

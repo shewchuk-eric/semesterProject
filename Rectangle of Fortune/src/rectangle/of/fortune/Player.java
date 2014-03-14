@@ -10,7 +10,7 @@ import java.util.Scanner;
  */
 public class Player implements Serializable {
     
-    static String playerNames[] = new String[3];//initialize player scores arrays - convert to a multidimensional array later!
+    static String playerNames[] = new String[3];//initialize player scores arrays - convert to a multidimensional array later?
     String name;
     int validName;
     
@@ -25,9 +25,9 @@ public class Player implements Serializable {
              while(validName==0) {
  
              if(validName > 15){
-                 border();
+                 Menu.border();
                  System.out.println("\tPlayer names must be no longer than 15 characters.");
-                 border();
+                 Menu.border();
              }
         }
              playerNames[position]=name;
@@ -38,9 +38,4 @@ public class Player implements Serializable {
             name=playerNames[position];
             return name;
         }
-        
-   private void border() {       
-        System.out.println(
-        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    }    
 }

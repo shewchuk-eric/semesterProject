@@ -14,7 +14,7 @@ public class MainMenuView extends Menu {
     MainMenuControl mainMenuControl = new MainMenuControl();    
     
     //Menu items to be displayed
-    static String[][] menuItems = {
+    static final String[][] menuItems = {
         {"", "MAIN MENU"},
         {"1", "Start New Game"},
         {"2", "Help and Instructions"}, 
@@ -23,7 +23,8 @@ public class MainMenuView extends Menu {
     
     // display the help menu and get the user input selection
     public void mainMenu() {
-            Menu.getChoice(menuItems);
+           do{
+               Menu.getChoice(menuItems);
             switch (newChoice) {
                 case "1":
                     this.mainMenuControl.newGame();
@@ -39,7 +40,7 @@ public class MainMenuView extends Menu {
                     System.out.println("Invalid selection. Please enter a valid selection.");
                     Menu.border();
             }
-         while (!newChoice.equals("3"));
-    }
+         }while (!newChoice.equals("3"));
+     }
   }
 
