@@ -2,6 +2,8 @@
 
 package rectangle.of.fortune;
 
+import rectangle.of.fortune.gameFunctions.PlayGame;
+
 /**
  *
  * @author Eric Shewchuk
@@ -11,14 +13,13 @@ public class MainMenuControl {
     MainMenuControl() {
     }
         
-        public void newGame() {
-        PlayGame newGame = new PlayGame();
+        public static void newGame() {
+        rectangle.of.fortune.gameFunctions.PlayGame newGame = new PlayGame();
         newGame.playGame();
     }
            
-        public void getHelpMenu() {
-         // Create instance of the HelpMenuView class
-        HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.helpMenu();
+        public static void getHelpMenu() {
+         // Call HelpMenuView method
+        HelpMenuView.helpMenu();
     }   
 }

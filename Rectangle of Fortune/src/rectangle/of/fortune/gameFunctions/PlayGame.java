@@ -1,7 +1,9 @@
 
-package rectangle.of.fortune;
+package rectangle.of.fortune.gameFunctions;
 import java.io.Serializable;
 import java.util.Scanner;
+import rectangle.of.fortune.Menu;
+import rectangle.of.fortune.Words;
 
 /**
  * @author Eric Shewchuk
@@ -9,7 +11,7 @@ import java.util.Scanner;
 
 public class PlayGame implements Serializable {
     
-    PlayGame() {
+    public PlayGame() {
     }
     
     static int playerOneScores[] = new int[10];//initialize player scores arrays - convert to a multidimensional array later!
@@ -21,11 +23,12 @@ public class PlayGame implements Serializable {
     static String word, nameOne, nameTwo, nameThree="";
 
  public void playGame() {
-    
-        StartGame Rounds = new StartGame();
-        StartGame Players = new StartGame();
         
-        players=Players.playerCount();//get number of players from user     
+        Menu.border();
+        System.out.println("\t"+GameEnums.STARTGAME.getValue());
+        Menu.border();
+        
+        players=StartGame.playerCount();//get number of players from user     
               Player playerOne = new Player();//initialize player one
                      Menu.border();
                      System.out.println("\tPlayer one, please enter your name");
@@ -49,14 +52,23 @@ public class PlayGame implements Serializable {
                      playerThree.name=nameThree;
                   }
         
-        rounds=Rounds.playRounds();// set number of rounds to play
+        rounds=StartGame.playRounds();// set number of rounds to play
         GuessLetter secret = new GuessLetter();
         
      for(played=0;played<rounds;played++){//main play game loop
 
-        Words newWord = new Words();
+        rectangle.of.fortune.Words newWord = new Words();
         //set word difficulty and choose word
-
+        
+        if(played==0){
+            Menu.border();
+            System.out.println("\t"+GameEnums.ROUNDONE.getValue());
+            Menu.border();
+        } else{
+            Menu.border();
+            System.out.println("\t"+GameEnums.NEWROUND.getValue());
+            Menu.border();            
+        }       
         System.out.println("\n\t*** Setup Round " + (played+1) + " ***");
         word=newWord.selectWord();
 
@@ -87,7 +99,7 @@ public class PlayGame implements Serializable {
       }
   }
   
-     int finalScore(int contestant){//called from GameOver class
+     public int finalScore(int contestant){//called from GameOver class
           switch(contestant){
           
           case 1:

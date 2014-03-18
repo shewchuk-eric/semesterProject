@@ -1,30 +1,41 @@
 
 
-package rectangle.of.fortune;
-import java.io.Serializable;
+package rectangle.of.fortune.gameFunctions;
 import java.util.Scanner;
+import rectangle.of.fortune.Menu;
 
 /**
  *
  * @author Eric Shewchuk
  */
-public class StartGame implements Serializable {
+public abstract class StartGame extends GameFunctionsInterface {
     
-    StartGame(){
-    }
+    static final String[][] difficulty = {
+        {"", "How difficult would you like the word to be?\n\tPlease choose from the following:\n"},
+        {"1", " - Easy"},
+        {"2", " - Medium"},
+        {"3", " - Hard"}
+    };
+    
+    static final String[][] roundCount = {
+        {"", "Enter how many rounds you would like to play."},
+        {"", "You may play up to ten rounds."}
+    };
+    
+    static final String[][] playCount = {
+        {"", "How many players will there be?\n"},
+        {"2", "There will be (2) players."},
+        {"3", "There will be (3) players."}
+    };
 
-        Scanner inFile = new Scanner(System.in);  
+        static Scanner inFile = new Scanner(System.in);  
         static String nameOne, nameTwo, nameThree="";
-        String choice;
         static int rounds, level, players;
         int nameLength;
         
-    int playerCount() {// called from PlayGame class - choose the number of players 
-        Menu.border();
-        System.out.println("\tWill there be (2) or (3) players?");
-        Menu.border();
-            choice = inFile.nextLine();//get user choice
-            choice = choice.trim().toUpperCase();//convert to UPPERCASE
+    static public int playerCount() {// called from PlayGame class - choose the number of players 
+            GameFunctionsInterface.getChoice(playCount);
+            choice = newChoice;
             if(!choice.equals("2") && !choice.equals("3")){//validate entry from user
                 System.out.println("\tInvalid selection. Please enter either 2 or 3.");
                 playerCount();
@@ -38,13 +49,9 @@ public class StartGame implements Serializable {
             return players;//send value back to PlayGame class
     }
     
-    int playRounds() {//choose the number of rounds to play
-        Menu.border();
-        System.out.println("\tHow many rounds would you like to play?\n\tYou may play up to ten rounds.");
-        Menu.border();
-        choice = inFile.nextLine();
-        choice = choice.trim().toUpperCase();
-        switch(choice){
+    static public int playRounds() {//choose the number of rounds to play
+        GameFunctionsInterface.getChoice(roundCount);
+        switch(newChoice){
              case "1":
                     rounds=1;
                     break;
@@ -84,16 +91,9 @@ public class StartGame implements Serializable {
         return rounds;
     }
     
-    int difficulty() {//choose the difficulty level
-        Menu.border();
-        System.out.println("\tHow difficult would you like the word to be?\n\tPlease choose from the following:\n"+
-                "\t1 - Easy\n"+
-                "\t2 - Medium\n"+
-                "\t3 - Hard");
-        Menu.border();
-        choice = inFile.nextLine();
-        choice = choice.trim().toUpperCase();
-        switch(choice){
+    static public int difficulty() {//choose the difficulty level
+        GameFunctionsInterface.getChoice(difficulty);
+        switch(newChoice){
              case "1":
                     level=1;
              return level;

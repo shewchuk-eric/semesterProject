@@ -1,5 +1,5 @@
 
-package rectangle.of.fortune;
+package rectangle.of.fortune.gameFunctions;
 import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;

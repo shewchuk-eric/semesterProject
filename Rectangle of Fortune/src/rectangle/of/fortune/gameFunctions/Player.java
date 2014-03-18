@@ -1,8 +1,9 @@
 
 
-package rectangle.of.fortune;
+package rectangle.of.fortune.gameFunctions;
 import java.io.Serializable;
 import java.util.Scanner;
+import rectangle.of.fortune.Menu;
 
 /**
  *
@@ -10,7 +11,7 @@ import java.util.Scanner;
  */
 public class Player implements Serializable {
     
-    static String playerNames[] = new String[3];//initialize player scores arrays - convert to a multidimensional array later?
+    static String playerNames[] = new String[3];//initialize player scores arrays
     String name;
     int validName;
     

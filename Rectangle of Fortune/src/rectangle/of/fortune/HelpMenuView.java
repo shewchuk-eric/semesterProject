@@ -6,7 +6,7 @@ package rectangle.of.fortune;
  * @author Eric Shewchuk
  */
 
-public class HelpMenuView extends Menu{
+public abstract class HelpMenuView extends Menu{
     
     HelpMenuView() {
     }
@@ -26,29 +26,35 @@ public class HelpMenuView extends Menu{
     };
   
     // display the help menu and get the user input selection
-    public void helpMenu() {
+    public static void helpMenu() {
         do{
             Menu.getChoice(menuItems);            
-             
             switch (newChoice) {
                 case "1":
-                    this.helpMenuControl.gameObject();
+              Menu.border();
+              System.out.println(HelpMenuControlEnums.GAMEOBJECT.getValue());
+              Menu.border();
                     break;
                 case "2":
-                    this.helpMenuControl.scoreGame();
+                    Menu.border();
+                    System.out.println(HelpMenuControlEnums.SCOREGAME.getValue());
+                    Menu.border();
                     break;
                 case "3":
-                    this.helpMenuControl.gameOptions();
+                    Menu.border();
+                    System.out.println(HelpMenuControlEnums.GAMEOPTIONS.getValue());
+                    Menu.border();
                     break;                  
                 case "4":
-                    this.helpMenuControl.gamePlay();
+                    Menu.border();
+                    System.out.println(HelpMenuControlEnums.GAMEPLAY.getValue());
+                    Menu.border();
                     break;
                 case "5":
-                    this.helpMenuControl.wordList();
+                    HelpMenuControl.wordList();
                     break;
                 case "6":
-                    MainMenuView goBack = new MainMenuView();
-                    goBack.mainMenu();
+                    MainMenuView.mainMenu();
                     break;
                 default: 
                     System.out.println("Invalid selection. Please enter a valid selection.");

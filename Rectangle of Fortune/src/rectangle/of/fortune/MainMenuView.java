@@ -6,7 +6,7 @@ package rectangle.of.fortune;
  *
  * @author Eric Shewchuk & Kevin Phair
  */
-public class MainMenuView extends Menu {
+public abstract class MainMenuView extends Menu {
     
     MainMenuView() {
     }
@@ -22,15 +22,15 @@ public class MainMenuView extends Menu {
     };
     
     // display the help menu and get the user input selection
-    public void mainMenu() {
+    public static void mainMenu() {
            do{
                Menu.getChoice(menuItems);
             switch (newChoice) {
                 case "1":
-                    this.mainMenuControl.newGame();
+                    MainMenuControl.newGame();
                     break;
                 case "2":
-                    this.mainMenuControl.getHelpMenu();
+                    MainMenuControl.getHelpMenu();
                     break;
                 case "3":
                     System.out.println("Goodbye!");

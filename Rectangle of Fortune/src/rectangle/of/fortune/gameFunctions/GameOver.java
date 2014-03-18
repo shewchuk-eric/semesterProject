@@ -1,6 +1,8 @@
 
-package rectangle.of.fortune;
+package rectangle.of.fortune.gameFunctions;
 import java.io.Serializable;
+import rectangle.of.fortune.MainMenuView;
+import rectangle.of.fortune.Menu;
 
 /**
  *
@@ -29,6 +31,10 @@ public class GameOver implements Serializable {
              player1=pOne.sendName(0);
              player2=pTwo.sendName(1);
              player3=pThree.sendName(2);
+             
+             Menu.border();
+             System.out.println("\t"+GameEnums.GAMEOVER.getValue());
+             Menu.border();
             
             if (players==2){
                 if(p1>p2){//first test
@@ -79,7 +85,6 @@ public class GameOver implements Serializable {
                 +"Sorry "+player1+", but you lost with a score of "+p1+".");
             }           
        }
-        MainMenuView mainMenu=new MainMenuView();
-        mainMenu.mainMenu();
+        MainMenuView.mainMenu();
    }
 }

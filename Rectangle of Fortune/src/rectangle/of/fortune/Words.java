@@ -2,6 +2,7 @@
 
 package rectangle.of.fortune;
 
+import rectangle.of.fortune.gameFunctions.StartGame;
 import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
@@ -14,23 +15,22 @@ import java.util.Arrays;
  */
 public class Words implements Serializable{
     
-    Words() {  
+    public Words() {  
     }
 
-    Scanner inFile = new Scanner(System.in);
+    static Scanner inFile = new Scanner(System.in);
     static String word, choice;
     static int level;
     int i=0, rnd, list=0;
     
     Vector<String> vault = new Vector<String>();
     
-    private final String[] easyWords = {"SHOUT","LOVE","BEST","BOOK","WATER","LABEL","EAST","FROG","TWIST","WRAP","PARK","SMALL","TRAP","SLIP","SCOOTER","TRUCK","WRITE","FACE","FENCE","BLOCK"};
-    private final String[] medWords = {"EDIBLE","PEANUT","SPIDER","SLANTED","SCANNER","QUIETLY","AMAZING","PICKLED","OMELET","AVOCADO","JAZZED","STUPOR","FALLEN","TRIFLE","PEPPER","SNOWING","BICYCLE","WEASEL","FAILURE","FLATBED"};
-    private final String[] hardWords = {"ALPHABET","JEALOUS","ENORMITY","BRANDING","IGNORANT","JUICEBOX","STUPENDOUS","COMPENSATE","MOSQUITOS","CATERPILLAR","INTERNET","SPELLING","SUITCASES","MUSHROOMS","TRANSPORTER","BACKPACK","SLOTHFUL","BEDRIDDEN","ACCELERATE","GARGANTUAN"};
+    static final String[] easyWords = {"SHOUT","LOVE","BEST","BOOK","WATER","LABEL","EAST","FROG","TWIST","WRAP","PARK","SMALL","TRAP","SLIP","SCOOTER","TRUCK","WRITE","FACE","FENCE","BLOCK"};
+    static final String[] medWords = {"EDIBLE","PEANUT","SPIDER","SLANTED","SCANNER","QUIETLY","AMAZING","PICKLED","OMELET","AVOCADO","JAZZED","STUPOR","FALLEN","TRIFLE","PEPPER","SNOWING","BICYCLE","WEASEL","FAILURE","FLATBED"};
+    static final String[] hardWords = {"ALPHABET","JEALOUS","ENORMITY","BRANDING","IGNORANT","JUICEBOX","STUPENDOUS","COMPENSATE","MOSQUITOS","CATERPILLAR","INTERNET","SPELLING","SUITCASES","MUSHROOMS","TRANSPORTER","BACKPACK","SLOTHFUL","BEDRIDDEN","ACCELERATE","GARGANTUAN"};
 
-    String selectWord() {// gets called from the PlayGame class
-        StartGame difficulty = new StartGame();
-        level=difficulty.difficulty();
+    public String selectWord() {// gets called from the PlayGame class
+        level=rectangle.of.fortune.gameFunctions.StartGame.difficulty();
         switch(level){
             case 1:
                 do{
@@ -72,7 +72,7 @@ public class Words implements Serializable{
           return word;
     }
     
-    void printWords() {
+    public static void printWords() {
         System.out.println("\tPlease choose the difficulty level of the words you want to list.\n"
                 + "\t1 - Easy\n"
                 + "\t2 - Medium\n"
@@ -89,7 +89,7 @@ public class Words implements Serializable{
             System.out.println("\t" + easyWord);
         }
                     Menu.border();
-                    this.printWords();
+                    printWords();
                     break;
                 case "2":
                     Menu.border();
@@ -98,7 +98,7 @@ public class Words implements Serializable{
             System.out.println("\t" + medWord);
         }
                     Menu.border();
-                    this.printWords();        
+                    printWords();        
                     break;
                 case "3":
                     Menu.border();
@@ -107,11 +107,10 @@ public class Words implements Serializable{
             System.out.println("\t" + hardWord);
         }
                     Menu.border();
-                    this.printWords();        
+                    printWords();        
                     break;
                 case "4":
-                    HelpMenuView goHelp = new HelpMenuView();
-                    goHelp.helpMenu();
+                    HelpMenuView.helpMenu();
                     break;
                 default:
                     System.out.println("That is not a valid selection.  Try again.");
