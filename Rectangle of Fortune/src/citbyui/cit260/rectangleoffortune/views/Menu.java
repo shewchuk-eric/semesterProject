@@ -1,7 +1,9 @@
 
-package rectangle.of.fortune;
+package citbyui.cit260.rectangleoffortune.views;
 import java.io.Serializable;
 import java.util.Scanner;
+import rectangle.of.fortune.DisplayInfo;
+import rectangle.of.fortune.EnterInfo;
 /**
  *
  * @author Eric Shewchuk

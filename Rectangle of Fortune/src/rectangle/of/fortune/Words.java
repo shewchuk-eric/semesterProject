@@ -2,6 +2,8 @@
 
 package rectangle.of.fortune;
 
+import citbyui.cit260.rectangleoffortune.views.Menu;
+import citbyui.cit260.rectangleoffortune.views.HelpMenuView;
 import rectangle.of.fortune.gameFunctions.StartGame;
 import java.io.Serializable;
 import java.util.Random;

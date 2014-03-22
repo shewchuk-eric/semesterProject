@@ -2,7 +2,7 @@
 
 package rectangle.of.fortune.gameFunctions;
 import java.util.Scanner;
-import rectangle.of.fortune.Menu;
+import citbyui.cit260.rectangleoffortune.views.Menu;
 
 /**
  *

@@ -1,6 +1,9 @@
 
 
-package rectangle.of.fortune;
+package citbyui.cit260.rectangleoffortune.views;
+
+import citbyui.cit260.rectangleoffortune.views.MainMenuControl;
+import citbyui.cit260.rectangleoffortune.views.Menu;
 
 /**
  *
