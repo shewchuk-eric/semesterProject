@@ -36,11 +36,11 @@ public abstract class MainMenuView extends Menu {
                     MainMenuControl.getHelpMenu();
                     break;
                 case "3":
-                    System.out.println("Goodbye!");
+                    System.out.println(MainMenuControlEnums.QUIT.getValue());
                     break;                  
                 default:
                     Menu.border();
-                    System.out.println("Invalid selection. Please enter a valid selection.");
+                    System.out.println(MainMenuControlEnums.INVALID.getValue());
                     Menu.border();
             }
          }while (!newChoice.equals("3"));

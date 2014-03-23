@@ -1,10 +1,8 @@
-
+    
 
 package citbyui.cit260.rectangleoffortune.views;
 
 import citbyui.cit260.rectangleoffortune.views.HelpMenuControl;
-import rectangle.of.fortune.HelpMenuControlEnums;
-import rectangle.of.fortune.HelpMenuControlEnums;
 
 /**
  *
