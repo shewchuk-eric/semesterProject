@@ -2,7 +2,6 @@
 
 package rectangle.of.fortune;
 
-import rectangle.of.fortune.gameFunctions.StartGame;
 import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;

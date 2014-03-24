@@ -6,10 +6,8 @@ package rectangle.of.fortune;
  *
  * @author Eric Shewchuk & Kevin Phair
  */
+
 public abstract class MainMenuView extends Menu {
-    
-    MainMenuView() {
-    }
     
     MainMenuControl mainMenuControl = new MainMenuControl();    
     

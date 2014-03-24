@@ -8,10 +8,6 @@ package rectangle.of.fortune;
 
 public abstract class HelpMenuView extends Menu{
     
-    HelpMenuView() {
-    }
-    
-        // Create instance of the HelpMenuControl (action) class
     HelpMenuControl helpMenuControl = new HelpMenuControl();
     
     // Menu items to be displayed    
