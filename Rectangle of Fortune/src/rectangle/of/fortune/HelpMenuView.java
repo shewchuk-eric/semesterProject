@@ -1,6 +1,9 @@
 
 
 package rectangle.of.fortune;
+
+import error.handling.MenuException;
+
 /**
  *
  * @author Eric Shewchuk
@@ -20,6 +23,8 @@ public abstract class HelpMenuView extends Menu{
         {"5", "See list of words"},
         {"6", "Back to Main Menu"}
     };
+    
+    static int x=1, y=1;    
   
     // display the help menu and get the user input selection
     public static void helpMenu() {
@@ -53,7 +58,14 @@ public abstract class HelpMenuView extends Menu{
                     MainMenuView.mainMenu();
                     break;
                 default: 
-                    System.out.println("Invalid selection. Please enter a valid selection.");
+                   try{
+                        x=0;
+                        x=y/x;
+                    }
+                    catch (ArithmeticException exc){
+                        error.handling.MenuException problem = new MenuException();
+                        problem.helpMenuThrow();
+                     }     
             }
         }while (!newChoice.equals("6"));
     }

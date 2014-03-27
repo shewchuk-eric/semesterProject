@@ -2,6 +2,8 @@
 
 package rectangle.of.fortune;
 
+import error.handling.MenuException;
+
 /**
  *
  * @author Eric Shewchuk & Kevin Phair
@@ -19,6 +21,8 @@ public abstract class MainMenuView extends Menu {
         {"3", "Quit and Exit Game"},
     };
     
+    static int x=1, y=1;
+    
     // display the help menu and get the user input selection
     public static void mainMenu() {
            do{
@@ -32,11 +36,16 @@ public abstract class MainMenuView extends Menu {
                     break;
                 case "3":
                     System.out.println("Goodbye!");
-                    break;                  
+                    break;
                 default:
-                    Menu.border();
-                    System.out.println("Invalid selection. Please enter a valid selection.");
-                    Menu.border();
+                    try{
+                        x=0;
+                        x=y/x;
+                    }
+                    catch (ArithmeticException exc){
+                        error.handling.MenuException problem = new MenuException();
+                        problem.mainMenuThrow();
+                     }                
             }
          }while (!newChoice.equals("3"));
      }
