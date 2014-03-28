@@ -1,8 +1,7 @@
     
 
 package citbyui.cit260.rectangleoffortune.views;
-
-import citbyui.cit260.rectangleoffortune.views.HelpMenuControl;
+import error.handling.MenuException;
 
 /**
  *
@@ -11,8 +10,7 @@ import citbyui.cit260.rectangleoffortune.views.HelpMenuControl;
 
 public abstract class HelpMenuView extends Menu{
     
-    HelpMenuView() {
-    }
+    static int x=0, y=1;
     
         // Create instance of the HelpMenuControl (action) class
     HelpMenuControl helpMenuControl = new HelpMenuControl();
@@ -31,7 +29,7 @@ public abstract class HelpMenuView extends Menu{
     // display the help menu and get the user input selection
     public static void helpMenu() {
         do{
-            Menu.getChoice(menuItems);            
+            Menu.getChoice(menuItems);
             switch (newChoice) {
                 case "1":
               Menu.border();
@@ -60,8 +58,14 @@ public abstract class HelpMenuView extends Menu{
                     MainMenuView.mainMenu();
                     break;
                 default: 
-                    System.out.println("Invalid selection. Please enter a valid selection.");
-            }
-        }while (!newChoice.equals("6"));
+                    try{
+                    x=y/x;
+                    }
+                    catch(ArithmeticException exc){
+                    error.handling.MenuException error = new MenuException();
+                    error.helpMenuThrow();
+                    }
+                  }
+                }while (!newChoice.equals("6"));
     }
 }

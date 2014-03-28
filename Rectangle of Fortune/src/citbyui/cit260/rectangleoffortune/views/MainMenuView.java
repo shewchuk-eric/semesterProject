@@ -1,18 +1,14 @@
 
 
 package citbyui.cit260.rectangleoffortune.views;
-
-import citbyui.cit260.rectangleoffortune.views.MainMenuControl;
-import citbyui.cit260.rectangleoffortune.views.Menu;
-
+import error.handling.MenuException;
 /**
  *
  * @author Eric Shewchuk & Kevin Phair
  */
 public abstract class MainMenuView extends Menu {
     
-    MainMenuView() {
-    }
+    static int x=0, y=1;
     
     MainMenuControl mainMenuControl = new MainMenuControl();    
     
@@ -39,11 +35,14 @@ public abstract class MainMenuView extends Menu {
                     System.out.println(MainMenuControlEnums.QUIT.getValue());
                     break;                  
                 default:
-                    Menu.border();
-                    System.out.println(MainMenuControlEnums.INVALID.getValue());
-                    Menu.border();
-            }
-         }while (!newChoice.equals("3"));
-     }
-  }
-
+                    try{
+                    x=y/x;
+                    }
+                    catch(ArithmeticException exc){
+                    error.handling.MenuException error = new MenuException();
+                    error.mainMenuThrow();
+                    }
+              }
+     }while (!newChoice.equals("3"));
+ }
+}
