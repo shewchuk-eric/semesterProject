@@ -1,6 +1,6 @@
 
 
-package rectangle.of.fortune;
+package citbyui.cit260.rectangleoffortune.views;
 
 import rectangle.of.fortune.gameFunctions.PlayGame;
 

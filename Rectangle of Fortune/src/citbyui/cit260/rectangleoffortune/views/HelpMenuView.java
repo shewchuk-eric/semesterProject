@@ -1,7 +1,6 @@
+    
 
-
-package rectangle.of.fortune;
-
+package citbyui.cit260.rectangleoffortune.views;
 import error.handling.MenuException;
 
 /**
@@ -11,6 +10,9 @@ import error.handling.MenuException;
 
 public abstract class HelpMenuView extends Menu{
     
+    static int x=0, y=1;
+    
+        // Create instance of the HelpMenuControl (action) class
     HelpMenuControl helpMenuControl = new HelpMenuControl();
     
     // Menu items to be displayed    
@@ -23,13 +25,11 @@ public abstract class HelpMenuView extends Menu{
         {"5", "See list of words"},
         {"6", "Back to Main Menu"}
     };
-    
-    static int x=1, y=1;    
   
     // display the help menu and get the user input selection
     public static void helpMenu() {
         do{
-            Menu.getChoice(menuItems);            
+            Menu.getChoice(menuItems);
             switch (newChoice) {
                 case "1":
               Menu.border();
@@ -58,15 +58,15 @@ public abstract class HelpMenuView extends Menu{
                     MainMenuView.mainMenu();
                     break;
                 default: 
-                   try{
-                        x=0;
-                        x=y/x;
+                    try{
+                    x=y/x;
                     }
-                    catch (ArithmeticException exc){
-                        error.handling.MenuException problem = new MenuException();
-                        problem.helpMenuThrow();
-                     }     
-            }
-        }while (!newChoice.equals("6"));
+                    catch(ArithmeticException exc){
+                    error.handling.MenuException error = new MenuException();
+                    error.helpMenuThrow();
+                    }
+                  }
+                }while (!newChoice.equals("6"));
     }
 }
+

@@ -1,15 +1,14 @@
 
 
-package rectangle.of.fortune;
-
+package citbyui.cit260.rectangleoffortune.views;
 import error.handling.MenuException;
-
 /**
  *
  * @author Eric Shewchuk & Kevin Phair
  */
-
 public abstract class MainMenuView extends Menu {
+    
+    static int x=0, y=1;
     
     MainMenuControl mainMenuControl = new MainMenuControl();    
     
@@ -20,8 +19,6 @@ public abstract class MainMenuView extends Menu {
         {"2", "Help and Instructions"}, 
         {"3", "Quit and Exit Game"},
     };
-    
-    static int x=1, y=1;
     
     // display the help menu and get the user input selection
     public static void mainMenu() {
@@ -35,19 +32,20 @@ public abstract class MainMenuView extends Menu {
                     MainMenuControl.getHelpMenu();
                     break;
                 case "3":
-                    System.out.println("Goodbye!");
-                    break;
+                    System.out.println(MainMenuControlEnums.QUIT.getValue());
+                    break;                  
                 default:
                     try{
-                        x=0;
-                        x=y/x;
+                    x=y/x;
                     }
-                    catch (ArithmeticException exc){
-                        error.handling.MenuException problem = new MenuException();
-                        problem.mainMenuThrow();
-                     }                
-            }
-         }while (!newChoice.equals("3"));
-     }
-  }
+                    catch(ArithmeticException exc){
+                    error.handling.MenuException error = new MenuException();
+                    error.mainMenuThrow();
+                    }
+              }
+     }while (!newChoice.equals("3"));
+ }}
+
+  
+
 

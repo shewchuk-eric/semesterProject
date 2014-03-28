@@ -1,8 +1,8 @@
 
 package rectangle.of.fortune.gameFunctions;
 import java.io.Serializable;
-import rectangle.of.fortune.MainMenuView;
-import rectangle.of.fortune.Menu;
+import citbyui.cit260.rectangleoffortune.views.MainMenuView;
+import citbyui.cit260.rectangleoffortune.views.Menu;
 
 /**
  *

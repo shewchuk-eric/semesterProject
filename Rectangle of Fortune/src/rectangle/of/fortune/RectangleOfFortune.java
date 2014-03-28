@@ -1,5 +1,7 @@
 package rectangle.of.fortune;
 
+import citbyui.cit260.rectangleoffortune.views.MainMenuView;
+
 /**
  * @author Eric Shewchuk
  */
