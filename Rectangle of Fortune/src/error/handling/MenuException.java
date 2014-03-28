@@ -2,7 +2,7 @@
 
 package error.handling;
  
-import citbyui.cit260.rectangleoffortune.views.Menu;
+import rectangle.of.fortune.menus.Menu;
 /**
  *
  * @author Eric Shewchuk
@@ -18,6 +18,11 @@ public class MenuException {
         Menu.border();
         System.out.println("Invalid selection. Please enter a valid choice from the menu");
         Menu.border();
+    }
+    public void mainException(){
+        Menu.border();
+        System.out.print("\tThat was not a number. I'm sorry you do not want to play.");
+        
     }
     
 }

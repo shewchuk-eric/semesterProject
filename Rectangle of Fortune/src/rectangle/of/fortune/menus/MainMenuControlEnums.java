@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package citbyui.cit260.rectangleoffortune.views;
+package rectangle.of.fortune.menus;
 
 /**
  *

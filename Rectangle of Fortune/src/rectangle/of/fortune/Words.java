@@ -2,8 +2,8 @@
 
 package rectangle.of.fortune;
 
-import citbyui.cit260.rectangleoffortune.views.Menu;
-import citbyui.cit260.rectangleoffortune.views.HelpMenuView;
+import rectangle.of.fortune.menus.Menu;
+import rectangle.of.fortune.menus.HelpMenuView;
 import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;

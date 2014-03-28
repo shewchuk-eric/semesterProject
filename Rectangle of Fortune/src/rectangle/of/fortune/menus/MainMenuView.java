@@ -1,6 +1,6 @@
 
 
-package citbyui.cit260.rectangleoffortune.views;
+package rectangle.of.fortune.menus;
 import error.handling.MenuException;
 /**
  *
