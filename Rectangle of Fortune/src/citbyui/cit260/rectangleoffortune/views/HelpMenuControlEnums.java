@@ -31,8 +31,8 @@ public enum HelpMenuControlEnums {
                 + "\n\tto choose another letter.  If a letter is not successfully "
                 + "\n\tguessed then the game moves to the next players turn. "
                 + "\n\tWhen a word is completed a new round will start unless the "
-                + "\n\tchosen number of rounds has been completed."
-                );     
+                + "\n\tchosen number of rounds has been completed.  The player with "
+                + "\n\tthe most points after the last round wins the game.");     
     
  String value;
     HelpMenuControlEnums (String v){

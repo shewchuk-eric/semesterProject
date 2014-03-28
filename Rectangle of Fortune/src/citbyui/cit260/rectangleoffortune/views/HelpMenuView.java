@@ -69,4 +69,3 @@ public abstract class HelpMenuView extends Menu{
                 }while (!newChoice.equals("6"));
     }
 }
-

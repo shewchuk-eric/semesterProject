@@ -44,8 +44,5 @@ public abstract class MainMenuView extends Menu {
                     }
               }
      }while (!newChoice.equals("3"));
- }}
-
-  
-
-
+ }
+}
