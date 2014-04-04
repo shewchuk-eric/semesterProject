@@ -179,7 +179,9 @@ this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jbExitActionPerformed
 
     private void jbStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStartActionPerformed
-     // TODO add your handling code here:
+EnterPlayerNames playerNames = new EnterPlayerNames(); 
+playerNames.setVisible(true);
+// TODO add your handling code here:
     }//GEN-LAST:event_jbStartActionPerformed
 
     /**
