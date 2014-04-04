@@ -10,7 +10,7 @@ import rectangle.of.fortune.gameFunctions.PlayGame;
  */
 public class MainMenuControl {
     
-    MainMenuControl() {
+    public MainMenuControl() {
     }
         
         public static void newGame() {
