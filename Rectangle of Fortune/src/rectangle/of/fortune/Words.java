@@ -20,7 +20,7 @@ public class Words implements Serializable{
     }
 
     static Scanner inFile = new Scanner(System.in);
-    static String word, choice;
+    static String word, choice, print="";
     static int level;
     int i=0, rnd, list=0;
     
@@ -73,6 +73,30 @@ public class Words implements Serializable{
           return word;
     }
     
+    public static String easy() {
+        Arrays.sort(easyWords); 
+        for (String easyWord : easyWords) {
+        print=print+(easyWord +", \n");
+        }
+        return print;
+    }
+    
+     public static String middle() {
+        Arrays.sort(medWords); 
+        for (String easyWord : medWords) {
+        print=print+(easyWord +", \n");
+        }
+        return print;
+    }
+     
+     public static String rough() {
+        Arrays.sort(hardWords); 
+        for (String easyWord : hardWords) {
+        print=print+(easyWord +", \n");
+        }
+        return print;
+    } 
+     
     public static void printWords() {
         System.out.println("\tPlease choose the difficulty level of the words you want to list.\n"
                 + "\t1 - Easy\n"

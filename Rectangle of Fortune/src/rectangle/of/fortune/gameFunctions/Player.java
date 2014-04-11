@@ -11,7 +11,7 @@ import rectangle.of.fortune.menus.Menu;
  */
 public class Player implements Serializable {
     
-    static String playerNames[] = new String[3];//initialize player scores arrays
+    static String playerNames[] = new String[3];//initialize player names array
     String name;
     int validName;
     
