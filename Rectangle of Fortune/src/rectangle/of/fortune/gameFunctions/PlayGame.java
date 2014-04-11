@@ -24,7 +24,7 @@ public class PlayGame implements Serializable {
 
  public void playGame() {
         
-        Menu.border();
+       /* Menu.border();
         System.out.println("\t"+GameEnums.STARTGAME.getValue());
         Menu.border();
         
@@ -51,6 +51,7 @@ public class PlayGame implements Serializable {
                      nameThree = playerThree.getName(2);
                      playerThree.name=nameThree;
                   }
+               */
         
         rounds=StartGame.playRounds();// set number of rounds to play
         GuessLetter secret = new GuessLetter();

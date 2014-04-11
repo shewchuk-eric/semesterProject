@@ -6,6 +6,7 @@
 
 
 package gui.frames;
+import rectangle.of.fortune.gameFunctions.StartGame;
 import rectangle.of.fortune.menus.MainMenuControl;
 
 /**
@@ -183,7 +184,6 @@ public class MainFrame extends javax.swing.JFrame {
         this.dispose();
         PlayerCount playerCount = new PlayerCount(); 
         playerCount.setVisible(true);
-// TODO add your handling code here:
     }//GEN-LAST:event_jbStartActionPerformed
 
     private void jbHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbHelpActionPerformed

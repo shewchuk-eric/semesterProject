@@ -13,15 +13,28 @@ public class Player implements Serializable {
     
     static String playerNames[] = new String[3];//initialize player names array
     String name;
-    int validName;
+    static int validName;
+    static Boolean valid;
     
     Player() { 
         name="";
     }
  
+        public static Boolean setName(int position, String name) {//called from PlayerCount class
+             validName=name.length();
+             if(validName==0 || validName > 15) {
+                 valid=false;
+                 return valid;
+             } 
+             playerNames[position]=name;
+             valid=true;
+             return valid;
+         } 
+        
+        
         String getName(int position) {//called from StartGame class
-             Scanner input = new Scanner(System.in);
-             this.name = input.next();
+             //Scanner input = new Scanner(System.in);
+             //this.name = input.next();
              validName=name.length();
              while(validName==0) {
  
