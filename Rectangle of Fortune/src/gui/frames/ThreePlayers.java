@@ -6,7 +6,6 @@
 
 package gui.frames;
 
-import rectangle.of.fortune.gameFunctions.PlayGame;
 import rectangle.of.fortune.gameFunctions.Player;
 
 /**
@@ -161,8 +160,8 @@ public class ThreePlayers extends javax.swing.JFrame {
             Player.setName(1, name2);
             Player.setName(2, name3);
             this.dispose();
-            PlayGame doIt = new PlayGame();
-            doIt.playGame();
+            RoundCount HowMany = new RoundCount();
+            HowMany.setVisible(true);
         }
     }//GEN-LAST:event_submitActionPerformed
 

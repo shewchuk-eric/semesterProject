@@ -1,7 +1,7 @@
 
 package rectangle.of.fortune.gameFunctions;
+import gui.frames.MainFrame;
 import java.io.Serializable;
-import rectangle.of.fortune.menus.MainMenuView;
 import rectangle.of.fortune.menus.Menu;
 
 /**
@@ -85,6 +85,7 @@ public class GameOver implements Serializable {
                 +"Sorry "+player1+", but you lost with a score of "+p1+".");
             }           
        }
-        MainMenuView.mainMenu();
+        MainFrame startOver = new MainFrame();
+        startOver.setVisible(true);
    }
 }

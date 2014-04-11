@@ -49,8 +49,8 @@ public abstract class StartGame extends GameFunctionsInterface {
             return players;//send value back to PlayGame class
     }
     
-    static public int playRounds() {//choose the number of rounds to play
-        GameFunctionsInterface.getChoice(roundCount);
+   /* static public int playRounds(String newChoice) {//choose the number of rounds to play
+        //GameFunctionsInterface.getChoice(roundCount);
         switch(newChoice){
              case "1":
                     rounds=1;
@@ -89,7 +89,7 @@ public abstract class StartGame extends GameFunctionsInterface {
                  playRounds();
         }
         return rounds;
-    }
+    }*/
     
     static public int difficulty() {//choose the difficulty level
         GameFunctionsInterface.getChoice(difficulty);

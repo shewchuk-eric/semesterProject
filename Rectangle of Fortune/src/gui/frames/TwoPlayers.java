@@ -138,8 +138,8 @@ public class TwoPlayers extends javax.swing.JFrame {
             Player.setName(0, name1);
             Player.setName(1, name2);
             this.dispose();
-            PlayGame doIt = new PlayGame();
-            doIt.playGame();
+            RoundCount HowMany = new RoundCount();
+            HowMany.setVisible(true);
         }
     }//GEN-LAST:event_submitActionPerformed
 

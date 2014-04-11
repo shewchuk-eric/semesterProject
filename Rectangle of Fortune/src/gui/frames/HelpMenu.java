@@ -10,7 +10,7 @@ import rectangle.of.fortune.menus.HelpMenuControlEnums;
 
 /**
  *
- * @author Eric
+ * @author Eric Shewchuk
  */
 public class HelpMenu extends javax.swing.JFrame {
 

@@ -2,8 +2,8 @@
 
 package rectangle.of.fortune;
 
+import gui.frames.HelpMenu;
 import rectangle.of.fortune.menus.Menu;
-import rectangle.of.fortune.menus.HelpMenuView;
 import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
@@ -135,7 +135,8 @@ public class Words implements Serializable{
                     printWords();        
                     break;
                 case "4":
-                    HelpMenuView.helpMenu();
+                    HelpMenu help = new HelpMenu();
+                    help.setVisible(true);
                     break;
                 default:
                     System.out.println("That is not a valid selection.  Try again.");

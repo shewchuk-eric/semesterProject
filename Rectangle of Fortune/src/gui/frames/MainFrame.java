@@ -6,8 +6,6 @@
 
 
 package gui.frames;
-import rectangle.of.fortune.gameFunctions.StartGame;
-import rectangle.of.fortune.menus.MainMenuControl;
 
 /**
  *
@@ -88,10 +86,10 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jpMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbStart)
-                    .addComponent(jbHelp)
-                    .addComponent(jbExit))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jbStart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbHelp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jpMenuLayout.setVerticalGroup(
             jpMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,15 +186,9 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jbHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbHelpActionPerformed
         this.dispose();
-        HelpMenu helpMenu = new HelpMenu();
-        helpMenu.setVisible(true);
+        HelpMenu help = new HelpMenu();
+        help.setVisible(true);
     }//GEN-LAST:event_jbHelpActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbExit;

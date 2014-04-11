@@ -21,39 +21,9 @@ public class PlayGame implements Serializable {
     Scanner inFile = new Scanner(System.in);
     static int rounds, played, players, totalPoints;
     static String word, nameOne, nameTwo, nameThree="";
-
- public void playGame() {
-        
-       /* Menu.border();
-        System.out.println("\t"+GameEnums.STARTGAME.getValue());
-        Menu.border();
-        
-        players=StartGame.playerCount();//get number of players from user     
-              Player playerOne = new Player();//initialize player one
-                     Menu.border();
-                     System.out.println("\tPlayer one, please enter your name");
-                     Menu.border();
-                     nameOne = playerOne.getName(0);
-                     playerOne.name=nameOne;
-                     
-              Player playerTwo = new Player();//initialize player two
-                     Menu.border();
-                     System.out.println("\tPlayer two, please enter your name");
-                     Menu.border();
-                     nameTwo = playerTwo.getName(1);
-                     playerTwo.name=nameTwo;
-                     
-        if(players==3){
-              Player playerThree = new Player();//initialize player three if needed
-                     Menu.border();
-                     System.out.println("\tPlayer three, please enter your name");
-                     Menu.border();
-                     nameThree = playerThree.getName(2);
-                     playerThree.name=nameThree;
-                  }
-               */
-        
-        rounds=StartGame.playRounds();// set number of rounds to play
+    
+ public static void playGame(int number) {
+        rounds=number;       
         GuessLetter secret = new GuessLetter();
         
      for(played=0;played<rounds;played++){//main play game loop
@@ -81,7 +51,7 @@ public class PlayGame implements Serializable {
         if(played+1==rounds){
             GameOver wrapUp = new GameOver();
             wrapUp.gameEnd(players);
-         }        
+         }
      }
  }
 
