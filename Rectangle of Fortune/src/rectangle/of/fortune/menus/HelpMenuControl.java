@@ -4,7 +4,6 @@ package rectangle.of.fortune.menus;
 import java.io.Serializable;
 import java.util.Scanner;
 import rectangle.of.fortune.Words;
-import rectangle.of.fortune.Words;
 
 /**
  *

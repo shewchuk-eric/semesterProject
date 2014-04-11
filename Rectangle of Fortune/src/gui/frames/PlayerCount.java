@@ -10,12 +10,12 @@ package gui.frames;
  *
  * @author kevinphair
  */
-public class EnterPlayerNames extends javax.swing.JFrame {
+public class PlayerCount extends javax.swing.JFrame {
 
     /**
      * Creates new form EnterPlayerNames
      */
-    public EnterPlayerNames() {
+    public PlayerCount() {
         initComponents();
     }
 
@@ -31,11 +31,8 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         pnTitle = new javax.swing.JPanel();
         pnbTitle = new javax.swing.JLabel();
-        pnName1 = new javax.swing.JLabel();
-        pnfName1 = new javax.swing.JTextField();
-        pnName2 = new javax.swing.JLabel();
-        pnfName2 = new javax.swing.JTextField();
-        pnSubmit = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Enter Player Names");
@@ -46,12 +43,23 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         pnTitle.setBackground(new java.awt.Color(153, 204, 255));
 
         pnbTitle.setBackground(new java.awt.Color(153, 204, 255));
-        pnbTitle.setFont(new java.awt.Font("Kannada Sangam MN", 0, 17)); // NOI18N
+        pnbTitle.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         pnbTitle.setForeground(new java.awt.Color(51, 51, 51));
-        pnbTitle.setText("Enter the name of player(s) below:");
+        pnbTitle.setText("Will there be two players or three?");
 
-        pnName1.setFont(new java.awt.Font("Kannada Sangam MN", 0, 13)); // NOI18N
-        pnName1.setText("Player Name");
+        jButton1.setLabel("Two Players");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setLabel("Three Players");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnTitleLayout = new javax.swing.GroupLayout(pnTitle);
         pnTitle.setLayout(pnTitleLayout);
@@ -59,12 +67,13 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             pnTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnTitleLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(pnTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnbTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnTitleLayout.createSequentialGroup()
-                        .addComponent(pnName1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pnfName1)))
+                        .addGap(19, 19, 19)
+                        .addComponent(jButton1)
+                        .addGap(28, 28, 28)
+                        .addComponent(jButton2)))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         pnTitleLayout.setVerticalGroup(
@@ -72,42 +81,26 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             .addGroup(pnTitleLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnbTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(pnTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pnName1)
-                    .addComponent(pnfName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pnName2.setFont(new java.awt.Font("Kannada Sangam MN", 0, 13)); // NOI18N
-        pnName2.setText("Player Name");
-
-        pnSubmit.setText("Continue");
+        pnbTitle.getAccessibleContext().setAccessibleName("Will there be 2 players or 3?");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(pnSubmit)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(pnName2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pnfName2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(pnTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pnName2)
-                    .addComponent(pnfName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnSubmit))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -130,19 +123,21 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel pnName1;
-    private javax.swing.JLabel pnName2;
-    private javax.swing.JButton pnSubmit;
     private javax.swing.JPanel pnTitle;
     private javax.swing.JLabel pnbTitle;
-    private javax.swing.JTextField pnfName1;
-    private javax.swing.JTextField pnfName2;
     // End of variables declaration//GEN-END:variables
 }

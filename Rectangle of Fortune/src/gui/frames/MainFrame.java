@@ -13,7 +13,6 @@ import rectangle.of.fortune.menus.MainMenuControl;
  * @author kevinphair
  */
 public class MainFrame extends javax.swing.JFrame {
-    private MainMenuControl mainCommands = new MainMenuControl();
 
     /**
      * Creates new form MainFrame
@@ -44,9 +43,11 @@ public class MainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rectangle Of Fortune");
+        setPreferredSize(new java.awt.Dimension(559, 350));
 
         jpBody.setBackground(new java.awt.Color(153, 204, 255));
         jpBody.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 0, 102)));
+        jpBody.setPreferredSize(new java.awt.Dimension(463, 290));
 
         jpTitle.setBackground(new java.awt.Color(153, 204, 255));
 
@@ -58,16 +59,21 @@ public class MainFrame extends javax.swing.JFrame {
         jpMenu.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 102)));
         jpMenu.setForeground(new java.awt.Color(255, 255, 255));
 
-        jbStart.setText("Start");
+        jbStart.setLabel("Start Game");
         jbStart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbStartActionPerformed(evt);
             }
         });
 
-        jbHelp.setText("Help");
+        jbHelp.setLabel("Help Menu");
+        jbHelp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbHelpActionPerformed(evt);
+            }
+        });
 
-        jbExit.setText("Exit");
+        jbExit.setLabel("Exit Game");
         jbExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbExitActionPerformed(evt);
@@ -81,15 +87,10 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jpMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMenuLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jbExit))
-                    .addGroup(jpMenuLayout.createSequentialGroup()
-                        .addGroup(jpMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbStart)
-                            .addComponent(jbHelp))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(jbStart)
+                    .addComponent(jbHelp)
+                    .addComponent(jbExit))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpMenuLayout.setVerticalGroup(
             jpMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,7 +108,7 @@ public class MainFrame extends javax.swing.JFrame {
         jtWelcome.setColumns(20);
         jtWelcome.setLineWrap(true);
         jtWelcome.setRows(5);
-        jtWelcome.setText("Welcome to Rectangle Of Fortune!\n\nRectangle Of Fortune puts your puzzle-solving skills to the test! By guessing one letter at a time, can you figure out what the entire word is before your opponite? The stakes are great, but the fun is even greater!\n\nHappy puzzle solving, brainiacs!");
+        jtWelcome.setText("Welcome to Rectangle Of Fortune - a twist on the classic Hangman game.  Rectangle Of Fortune puts your puzzle-solving skills to the test!  By guessing one letter at a time, can you solve the puzzle before your opponent? The stakes are great, but the fun is even greater!  Happy puzzle solving, brainiacs!");
         jtWelcome.setWrapStyleWord(true);
         jtWelcome.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 102)));
         jtWelcome.setMargin(new java.awt.Insets(10, 10, 10, 10));
@@ -126,8 +127,8 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpTitleLayout.createSequentialGroup()
                         .addGap(102, 102, 102)
-                        .addComponent(jlTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                        .addComponent(jlTitle)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpTitleLayout.setVerticalGroup(
             jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,10 +136,10 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jlTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jpMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);
@@ -167,22 +168,29 @@ public class MainFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jpBody, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
-this.dispose();        // TODO add your handling code here:
+        this.dispose();       
     }//GEN-LAST:event_jbExitActionPerformed
 
     private void jbStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStartActionPerformed
-EnterPlayerNames playerNames = new EnterPlayerNames(); 
-playerNames.setVisible(true);
+        this.dispose();
+        PlayerCount playerCount = new PlayerCount(); 
+        playerCount.setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_jbStartActionPerformed
+
+    private void jbHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbHelpActionPerformed
+        this.dispose();
+        HelpMenu helpMenu = new HelpMenu();
+        helpMenu.setVisible(true);
+    }//GEN-LAST:event_jbHelpActionPerformed
 
     /**
      * @param args the command line arguments
