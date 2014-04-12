@@ -5,6 +5,7 @@ import java.util.Scanner;
 import rectangle.of.fortune.menus.Menu;
 import rectangle.of.fortune.Words;
 
+
 /**
  * @author Eric Shewchuk
  */
